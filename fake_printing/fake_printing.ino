@@ -1,5 +1,5 @@
 #include <SoftwareSerial.h>
-SoftwareSerial Thermal(8, 9);
+SoftwareSerial Thermal(2, 3);
 int heatTime = 140;
 int heatInterval = 255;
 char printDensity = 15; 
