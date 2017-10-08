@@ -1,5 +1,6 @@
 int led = 13;
-byte count = 0;
+int data = 0;
+int light = LOW;
 
 void setup(){
   Serial.begin(9600);
@@ -7,10 +8,8 @@ void setup(){
 }
 
 void loop(){
-  digitalWrite(led, HIGH);
-  Serial.write(count);
-  count = (count + 1) % 256;
-  delay(500);
-  digitalWrite(led, LOW);
-  delay(500);
+  data = Serial.read();
+  if(data == 'H') {
+    Serial.write(data);
+  }
 }
