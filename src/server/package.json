@@ -1,0 +1,12 @@
+{
+	"version" : "1.0.0",
+	"author" : "Andre Josefsson <andrejos@kth.se>",
+	"main" : "server.js",
+	"scripts" : {
+		"start" : "nodejs server.js"
+	},
+	"dependencies": {
+		"body-parser" : "~1.15.2",
+		"express" : "~4.14.0"
+	}
+}
