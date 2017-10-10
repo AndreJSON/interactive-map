@@ -1,8 +1,12 @@
 import serial
 import time
+import requests
 
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'
+
+#req = requests.get('http://localhost:8082/events')
+#events = req.json()["events"]
 
 ser = serial.Serial("/dev/ttyACM0", 9600)
 ser.baudrate = 9600
