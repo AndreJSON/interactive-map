@@ -15,6 +15,15 @@ ser = serial.Serial("/dev/ttyACM0", 9600)
 ser.baudrate = 9600
 
 
+def doStuff(message):
+	print message
+
+def sendInitialMessages():
+	setLed(0, 1)
+
+def setLed(led, state):
+	sendMessage("L" + str(led) + str(state))
+
 def readMessage():
 	if ser.in_waiting > 0:
 		message = ""
@@ -34,22 +43,18 @@ def sendMessage(message):
 	ser.write(message)
 	ser.write(END_MESSAGE)
 
-def setLed(led, state):
-	sendMessage("L" + str(led) + str(state))
-
 def getEvents():
 	req = requests.get('http://l:8082/events')
 	return req.json()["events"]
 
 def loop(events):
+	sendInitialMessages()
 	while True:
-		time.sleep(0.2)
-		setLed(0, 1)
 		message = readMessage()
 		if message is None:
 			time.sleep(0.03)  # Wait 30ms before checking for messages again.
 		else:
-			print message
+			doStuff(message)
 
 def main():
 	events = getEvents()
