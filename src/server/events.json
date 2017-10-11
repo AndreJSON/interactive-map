@@ -1,8 +1,39 @@
 {
-	"events":
-	[
+	"events": [
 		{
-			"field": "value"
+			"venueId": 0,
+			"name": "Stadsbiblioteket",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Vasastaden",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": {
+					"garage": false,
+					"street": true,
+					"validated": false,
+					"lot": false,
+					"valet": false
+				},
+			},
+			"title": "Stories and songs for children 0-7 months",
+			"description": "Stories (\"Ramsor\") and songs for the youngest children 0-7 months and their adults.",
+			"category": "music", // One of the predefined event categories.
+			"date": "2017-11-01",
+			"start": "11:00",
+			"end": "11:30",
+			"ticket": true, // True if ticket is needed.
+			"ticketLink": "http://bit.ly/2yYpVPf" // Link to ticket sales.
 		}
 	]
 }
