@@ -2,6 +2,7 @@ import serial
 import time
 import requests
 
+FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'
 DAY_0 = '2017-11-01'
@@ -13,6 +14,20 @@ DAY_4 = '2017-11-05'
 ser = serial.Serial("/dev/ttyACM0", 9600)
 ser.baudrate = 9600
 
+
+def readMessage():
+	if ser.in_waiting > 0:
+		message = ""
+		while ser.read() != START_MESSAGE:
+			pass
+		while True:
+			data = ser.read()
+			if data != END_MESSAGE:
+				message += data
+			else:
+				return message
+	else:
+		return None
 
 def sendMessage(message):
 	ser.write(START_MESSAGE)
@@ -28,11 +43,13 @@ def getEvents():
 
 def loop(events):
 	while True:
-		time.sleep(0.5)
-		setLed(0,1)
-		while ser.in_waiting > 0:
-			resp = ser.read()
-			print resp
+		time.sleep(0.2)
+		setLed(0, 1)
+		message = readMessage()
+		if message is None:
+			time.sleep(0.03)  # Wait 30ms before checking for messages again.
+		else:
+			print message
 
 def main():
 	events = getEvents()
