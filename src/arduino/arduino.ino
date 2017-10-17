@@ -4,6 +4,11 @@ const int END_MESSAGE = 2;
 const int ledx = 13;
 const int led0 = 13;
 const int led1 = 13;
+const int outputA = 11; //CLK of rot
+const int outputB = 12; //DT of rot
+char rotCounter = 0; 
+int aState;
+int aLastState;
 char message[1000];
 int messagePos = 0;
 
@@ -11,6 +16,10 @@ void setup() {
   Serial.begin(9600);
   pinMode(ledx, OUTPUT);
   pinMode(led0, OUTPUT);
+  pinMode(led1, OUTPUT);
+  pinMode (outputA,INPUT);
+  pinMode (outputB,INPUT);
+  aLastState = digitalRead(outputA);
 }
 
 void readMessage() {
@@ -28,8 +37,6 @@ void readMessage() {
 }
 
 void processLedMessage() {
-  digitalWrite(led0, HIGH); 
-  digitalWrite(led1, HIGH);
 }
 
 void processMessage() {
@@ -38,26 +45,46 @@ void processMessage() {
       processLedMessage();
     }
   }
+  messagePos = 0; //Reset messagePos after processing.
 }
 
-void readSensors() { 
+void readRotary() {
+  aState = digitalRead(outputA);
+  if (aState != aLastState){
+    if (digitalRead(outputB) == aState) { // if true, anti-clockwise rotation has ocurred.
+      rotCounter++;
+    } else {
+      rotCounter--;
+    }
+    if ((rotCounter % 2) == 0) {
+      digitalWrite(ledx, HIGH);
+    } else {
+      digitalWrite(ledx, LOW);
+    }
+  } 
+  aLastState = aState;
+}
+
+void readSensors() {
+  readRotary();
 }
 
 void sendMessage() {
-  Serial.write(START_MESSAGE);
-  for (char i = 0; i < messagePos; i++) {
-    Serial.write(message[i]);
+  if (messagePos > 0) { //Only write start and end if there is a message to send.
+    Serial.write(START_MESSAGE);
+    for (char i = 0; i < messagePos; i++) {
+      Serial.write(message[i]);
+    }
+    messagePos = 0;
+    Serial.write(END_MESSAGE);
   }
-  messagePos = 0;
-  Serial.write(END_MESSAGE);
 }
 
 void loop() {
   if(Serial.read() == START_MESSAGE) {
-    digitalWrite(ledx, HIGH); //Light up built in LED to show that board has gotten at least one message.
     readMessage();
-    processMessage();
-    readSensors();
-    sendMessage();
   }
+  processMessage();
+  readSensors();
+  sendMessage();
 }
