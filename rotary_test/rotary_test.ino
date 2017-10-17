@@ -1,5 +1,5 @@
-#define outputA 6
-#define outputB 7
+#define outputA 11 //CLK
+#define outputB 12 //DT
 int counter = 0; 
 int aState;
 int aLastState;
@@ -9,7 +9,7 @@ void setup() {
   pinMode (outputB,INPUT);
  
   Serial.begin (9600);
-  aLastState = digitalRead(outputA);   
+  aLastState = digitalRead(outputA);
 }
 
 void loop() { 
