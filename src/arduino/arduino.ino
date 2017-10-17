@@ -56,11 +56,9 @@ void readRotary() {
     } else {
       rotCounter--;
     }
-    if ((rotCounter % 2) == 0) {
-      digitalWrite(ledx, HIGH);
-    } else {
-      digitalWrite(ledx, LOW);
-    }
+    message[0] = 'R';
+    message[1] = (rotCounter + 0x30);
+    messagePos = 2; //Move forward 2 steps since we just added a 2 char message.
   } 
   aLastState = aState;
 }
