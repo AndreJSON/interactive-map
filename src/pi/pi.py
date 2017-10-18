@@ -10,6 +10,8 @@ DAY_2 = '2017-11-02'
 DAY_3 = '2017-11-03'
 DAY_4 = '2017-11-04'
 
+selected_day = DAY_1
+
 ser = serial.Serial("/dev/ttyACM0", 9600)
 ser.baudrate = 9600
 
@@ -17,8 +19,19 @@ ser.baudrate = 9600
 def handleButton(message):
 	print message
 
+def doNewDayStuff():
+	print selected_day
+
 def handleRotary(message):
-	print message
+	if message[0] in '012':
+		selected_day = DAY_1
+	elif message[0] in '34':
+		selected_day = DAY_2
+	elif message[0] in '56':
+		selected_day = DAY_3
+	elif message[0] in '78':
+		selected_day = DAY_4
+	doNewDayStuff()
 
 def doStuff(message):
 	if message[0] == "E":  # Echo
@@ -31,7 +44,8 @@ def doStuff(message):
 		print message
 
 def sendInitialMessages():
-	sendMessage("P" + "Yooo Jim!")
+	doNewDayStuff()
+	sendMessage("E" + "Yooo!")
 
 def setLed(led, state):
 	sendMessage("L" + str(led) + str(state))
