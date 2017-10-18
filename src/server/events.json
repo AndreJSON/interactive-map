@@ -245,7 +245,7 @@
 				"sunday": "11:00-17:00"
 			},
 			"attributes": {
-				"restaurantInside": true,
+				"restaurantInside": false,
 				"restaurantsCloseBy": false,
 				"venueParking": true
 			},
@@ -273,7 +273,7 @@
 				"sunday": "11:00-17:00"
 			},
 			"attributes": {
-				"restaurantInside": true,
+				"restaurantInside": false,
 				"restaurantsCloseBy": false,
 				"venueParking": true
 			},
@@ -301,7 +301,7 @@
 				"sunday": "11:00-17:00"
 			},
 			"attributes": {
-				"restaurantInside": true,
+				"restaurantInside": false,
 				"restaurantsCloseBy": false,
 				"venueParking": true
 			},
@@ -328,7 +328,7 @@
 				"sunday": "11:00-17:00"
 			},
 			"attributes": {
-				"restaurantInside": true,
+				"restaurantInside": false,
 				"restaurantsCloseBy": false,
 				"venueParking": true
 			},
@@ -340,6 +340,225 @@
 			"end": "22:00",
 			"ticket": true,
 			"ticketLink": "http://bit.ly/2yS0fad"
+		}, {
+			"venueId": 3,
+			"name": "Stadshuset",
+			"address": "Hantverkargatan 1",
+			"neighbourhood": "Kungsholmen",
+			"isOpen": true,
+			"hours": {
+				"monday": "08:00-16:30",
+				"tuesday": "08:00-16:30",
+				"wednesday": "08:00-16:30",
+				"thursday": "08:00-16:30",
+				"friday": "08:00-16:30",
+				"saturday": "closed",
+				"sunday": "closed"
+			},
+			"attributes": {
+				"restaurantInside": false,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "Fireworks",
+			"description": "City Hall (Stadshuset) is located just on the edge of Lake Mälaren on Kungsholmen. The setting is magical, with the fireworks brilliantly lighting up the skies and falling gently into the waters below. The crowds are warm and friendly but get there early as the crowds are also big.",
+			"category": "entertainment",
+			"date": "2017-11-03",
+			"start": "19:00",
+			"end": "22:00",
+			"ticket": false
+		}, {
+			"venueId": 3,
+			"name": "Waterfront",
+			"address": "Nils Ericsons Plan 4",
+			"neighbourhood": "Norrmalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "08:00-16:30",
+				"tuesday": "08:00-16:30",
+				"wednesday": "08:00-16:30",
+				"thursday": "08:00-16:30",
+				"friday": "08:00-16:30",
+				"saturday": "closed",
+				"sunday": "closed"
+			},
+			"attributes": {
+				"restaurantInside": false,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "STHLM Tech Fest",
+			"description": "5,000 startup founders, investors, designers, developers, and journalists come together to share, be inspired and meet the whole Stockholm startup ecosystem, and welcome visitors from 20+ countries.",
+			"category": "knowledge",
+			"date": "2017-11-04",
+			"start": "09:30",
+			"end": "19:30",
+			"ticket": true,
+			"ticketLink": "http://bit.ly/2i0A0Xq"
+		}, {
+			"venueId": 4,
+			"name": "Fotografiska",
+			"address": "Stadsgårdshamnen 22",
+			"neighbourhood": "Södermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "09:00-11:00",
+				"tuesday": "09:00-11:00",
+				"wednesday": "09:00-11:00",
+				"thursday": "09:00-01:00",
+				"friday": "09:00-01:00",
+				"saturday": "09:00-01:00",
+				"sunday": "09:00-11:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "Opening of The Autumn Salon",
+			"description": "The Autumn Salon at Fotografiska is the largest juried exhibition of Swedish photography. It is a tribute to Sweden’s photographers, established as well as amateurs, open to everyone who resides in Sweden. This is the fourth edition of Fotografiska’s Autumn Salon, which showcases Swedish photography as its best.",
+			"category": "knowledge",
+			"date": "2017-11-03",
+			"start": "12:00",
+			"end": "13:30",
+			"ticket": true
+		}, {
+			"venueId": 4,
+			"name": "Fotografiska",
+			"address": "Stadsgårdshamnen 22",
+			"neighbourhood": "Södermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "09:00-11:00",
+				"tuesday": "09:00-11:00",
+				"wednesday": "09:00-11:00",
+				"thursday": "09:00-01:00",
+				"friday": "09:00-01:00",
+				"saturday": "09:00-01:00",
+				"sunday": "09:00-11:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "The Autumn Salon",
+			"description": "The Autumn Salon at Fotografiska is the largest juried exhibition of Swedish photography. It is a tribute to Sweden’s photographers, established as well as amateurs, open to everyone who resides in Sweden. This is the fourth edition of Fotografiska’s Autumn Salon, which showcases Swedish photography as its best.",
+			"category": "knowledge",
+			"date": "2017-11-04",
+			"start": "09:00",
+			"end": "01:00",
+			"ticket": true
+		}, {
+			"venueId": 5,
+			"name": "Trädgården",
+			"address": "Hammarby Slussväg 2",
+			"neighbourhood": "Södermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "closed",
+				"tuesday": "closed",
+				"wednesday": "closed",
+				"thursday": "17:00-03:00",
+				"friday": "17:00-03:00",
+				"saturday": "17:00-03:00",
+				"sunday": "17:00-03:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "Sunset Cinema: Fonko",
+			"description": "A great, musical revolution is currently underway in Africa and affects millions of people. In Fonko we meet some of the outspoken, creative and interesting artists who redefine the image of Africa today.",
+			"category": "knowledge",
+			"date": "2017-11-02",
+			"start": "17:00",
+			"end": "18:30",
+			"ticket": false
+		}, {
+			"venueId": 5,
+			"name": "Trädgården",
+			"address": "Hammarby Slussväg 2",
+			"neighbourhood": "Södermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "closed",
+				"tuesday": "closed",
+				"wednesday": "closed",
+				"thursday": "17:00-03:00",
+				"friday": "17:00-03:00",
+				"saturday": "17:00-03:00",
+				"sunday": "17:00-03:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "LIVE SESSIONS: DUNGEN",
+			"description": "It will be the fifth year in a row Dungen will come to our club. One of the world's absolute best live bands will end the lifetime!",
+			"category": "music",
+			"date": "2017-11-03",
+			"start": "21:00",
+			"end": "23:30",
+			"ticket": false
+		}, {
+			"venueId": 6,
+			"name": "Gamla Stan",
+			"address": "Prästgatan 24",
+			"neighbourhood": "Gamla Stan",
+			"isOpen": true,
+			"hours": {
+				"monday": "00:00-23:59",
+				"tuesday": "00:00-23:59",
+				"wednesday": "00:00-23:59",
+				"thursday": "00:00-23:59",
+				"friday": "00:00-23:59",
+				"saturday": "00:00-23:59",
+				"sunday": "00:00-23:59"
+			},
+			"attributes": {
+				"restaurantInside": false,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "Run through Stockholm",
+			"description": "Join a local running group or book a guided tour and experience the best of Stockholm while running. Explore the historic Old Town, Djurgården, Södermalm, or the beautiful trails through the forest alongside a friendly local.",
+			"category": "sports",
+			"date": "2017-11-03",
+			"start": "10:00",
+			"end": "11:30",
+			"ticket": true,
+			"ticketLink": "www.runwithmestockholm.com"
+		}, {
+			"venueId": 6,
+			"name": "Gamla Stan",
+			"address": "Mälartorget 13",
+			"neighbourhood": "Gamla Stan",
+			"isOpen": true,
+			"hours": {
+				"monday": "00:00-23:59",
+				"tuesday": "00:00-23:59",
+				"wednesday": "00:00-23:59",
+				"thursday": "00:00-23:59",
+				"friday": "00:00-23:59",
+				"saturday": "00:00-23:59",
+				"sunday": "00:00-23:59"
+			},
+			"attributes": {
+				"restaurantInside": false,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "Free Tour",
+			"description": "Free guided tours in English that take you to the main sites of Stockholm. Tours last for about 1 hour and 30 minutes, and starts daily rain, shine or snow.",
+			"category": "knowledge",
+			"date": "2017-11-04",
+			"start": "10:00",
+			"end": "11:00",
+			"ticket": false,
+			"ticketLink": "www.stockholmfreetour.com"
 		}
 	]
 }

@@ -1,3 +1,4 @@
+#include <SoftwareSerial.h>
 const int FAULTY_DATA = -1;
 const int START_MESSAGE = 1;
 const int END_MESSAGE = 2;
@@ -8,6 +9,7 @@ const int BUTTON3 = 203;
 const int BUTTON4 = 340;
 const int BUTTON5 = 639;
 const int BUTTON6 = 852;
+const int buttonPin = A1;
 const int led0 = 13; //Special built in led
 const int led1 = 1;
 const int led2 = 2;
@@ -16,7 +18,9 @@ const int led4 = 4;
 const int led5 = 5;
 const int led6 = 6;
 const int led7 = 7;
-const int buttonPin = A1;
+const int printerTX = 9;
+const int printerRX = 10;
+SoftwareSerial Thermal(printerTX, printerRX);
 const int outputA = 11; //CLK of rot
 const int outputB = 12; //DT of rot
 char rotCounter = 0; 
@@ -39,6 +43,16 @@ void setup() {
   pinMode (outputA,INPUT);
   pinMode (outputB,INPUT);
   aLastState = digitalRead(outputA);
+  Thermal.begin(19200);
+  Thermal.write(27);
+  Thermal.write(55);
+  Thermal.write(7);
+  Thermal.write(80); //Heat time, 80 default.
+  Thermal.write(255); //Heat interval, 255 default?
+  Thermal.write(18);
+  Thermal.write(35);
+  int printSetting = (15<<4) | 15;
+  Thermal.write(printSetting);
 }
 
 void readMessage() {
@@ -69,6 +83,16 @@ void processLedMessage() {
 }
 
 void processPrinterMessage() {
+  for (int i = 1; i < messagePos; i++) {
+    Thermal.write(message[i]);
+  }
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
 }
 
 void processMessage() {

@@ -5,21 +5,33 @@ import requests
 FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'
-DAY_0 = '2017-11-01'
-DAY_1 = '2017-11-02'
-DAY_2 = '2017-11-03'
-DAY_3 = '2017-11-04'
-DAY_4 = '2017-11-05'
+DAY_1 = '2017-11-01'
+DAY_2 = '2017-11-02'
+DAY_3 = '2017-11-03'
+DAY_4 = '2017-11-04'
 
 ser = serial.Serial("/dev/ttyACM0", 9600)
 ser.baudrate = 9600
 
 
-def doStuff(message):
+def handleButton(message):
 	print message
 
+def handleRotary(message):
+	print message
+
+def doStuff(message):
+	if message[0] == "E":  # Echo
+		print message[1:]
+	elif message[0] == "B":  # Button
+		handleButton(message[1:])
+	elif message[0] == "R":  # Rotary
+		handleRotary(message[1:])
+	else:  # Something faulty probably, just print it.
+		print message
+
 def sendInitialMessages():
-	setLed(0,1)
+	sendMessage("P" + "Yooo Jim!")
 
 def setLed(led, state):
 	sendMessage("L" + str(led) + str(state))
@@ -52,7 +64,7 @@ def loop(events):
 	while True:
 		message = readMessage()
 		if message is None:
-			time.sleep(0.03)  # Wait 30ms before checking for messages again.
+			time.sleep(0.02)  # Wait 20ms before checking for messages again.
 		else:
 			doStuff(message)
 
