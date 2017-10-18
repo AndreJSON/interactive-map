@@ -8,9 +8,14 @@ const int BUTTON3 = 203;
 const int BUTTON4 = 340;
 const int BUTTON5 = 639;
 const int BUTTON6 = 852;
-const int ledx = 13;
-const int led0 = 13;
-const int led1 = 13;
+const int led0 = 13; //Special built in led
+const int led1 = 1;
+const int led2 = 2;
+const int led3 = 3;
+const int led4 = 4;
+const int led5 = 5;
+const int led6 = 6;
+const int led7 = 7;
 const int buttonPin = A1;
 const int outputA = 11; //CLK of rot
 const int outputB = 12; //DT of rot
@@ -22,9 +27,14 @@ int messagePos = 0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(ledx, OUTPUT);
   pinMode(led0, OUTPUT);
   pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
+  pinMode(led4, OUTPUT);
+  pinMode(led5, OUTPUT);
+  pinMode(led6, OUTPUT);
+  pinMode(led7, OUTPUT);
   pinMode(buttonPin, INPUT);
   pinMode (outputA,INPUT);
   pinMode (outputB,INPUT);
@@ -46,15 +56,35 @@ void readMessage() {
 }
 
 void processLedMessage() {
+  switch(message[1]) {
+    case '0': digitalWrite(led0, message[2] == '1'? HIGH:LOW);break;
+    case '1': digitalWrite(led1, message[2] == '1'? HIGH:LOW);break;
+    case '2': digitalWrite(led2, message[2] == '1'? HIGH:LOW);break;
+    case '3': digitalWrite(led3, message[2] == '1'? HIGH:LOW);break;
+    case '4': digitalWrite(led4, message[2] == '1'? HIGH:LOW);break;
+    case '5': digitalWrite(led5, message[2] == '1'? HIGH:LOW);break;
+    case '6': digitalWrite(led6, message[2] == '1'? HIGH:LOW);break;
+    case '7': digitalWrite(led7, message[2] == '1'? HIGH:LOW);break;
+  }
+}
+
+void processPrinterMessage() {
 }
 
 void processMessage() {
   if (messagePos > 0) {
-    if (message[0] == 'L') {
+    if (message[0] == 'L' && messagePos == 3) { //Led message.
       processLedMessage();
+      messagePos = 0; //Reset messagePos after processing.
+    } else if (message[0] == 'P') { //Printer message
+      processPrinterMessage();
+      messagePos = 0; //Reset messagePos after processing.
+    } else if (message[0] == 'E') { //Echo message.
+      //Do nothing, message will be echoed back.
+    } else { //Couldn't figure out what kind of message it was, so just reset.
+      messagePos = 0;
     }
   }
-  messagePos = 0; //Reset messagePos after processing.
 }
 
 void readRotary() {
@@ -96,8 +126,12 @@ void readButtons() {
 }
 
 void readSensors() {
-  //readRotary();
-  readButtons();
+  if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
+    readRotary();
+  }
+  if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
+    readButtons();
+  }
 }
 
 void sendMessage() {

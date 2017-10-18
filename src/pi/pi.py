@@ -11,7 +11,7 @@ DAY_2 = '2017-11-03'
 DAY_3 = '2017-11-04'
 DAY_4 = '2017-11-05'
 
-ser = serial.Serial("/dev/ttyACM1", 9600)
+ser = serial.Serial("/dev/ttyACM0", 9600)
 ser.baudrate = 9600
 
 
@@ -19,7 +19,7 @@ def doStuff(message):
 	print message
 
 def sendInitialMessages():
-	setLed(0, 1)
+	setLed(0,1)
 
 def setLed(led, state):
 	sendMessage("L" + str(led) + str(state))
