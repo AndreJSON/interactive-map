@@ -1,37 +1,345 @@
 {
 	"events": [{
-		"venueId": 0,
-		"name": "Stadsbiblioteket",
-		"address": "Sveavägen 73",
-		"neighbourhood": "Vasastaden",
-		"isOpen": true,
-		"hours": {
-			"monday": "10:00-21:00",
-			"tuesday": "10:00-21:00",
-			"wednesday": "10:00-21:00",
-			"thursday": "10:00-21:00",
-			"friday": "10:00-19:00",
-			"saturday": "11:00-17:00",
-			"sunday": "11:00-17:00"
+			"venueId": 0,
+			"name": "Stadsbiblioteket",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Vasastaden",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": false
+			},
+			"title": "Stories and songs for children 0-7 months",
+			"description": "Stories (\"Ramsor\") and songs for the youngest children 0-7 months and their adults.",
+			"category": "music",
+			"date": "2017-11-01",
+			"start": "11:00",
+			"end": "11:30",
+			"ticket": true,
+			"ticketLink": "http://bit.ly/2yYpVPf"
 		},
-		"attributes": {
-			"restaurantInside": true,
-			"restaurantsCloseBy": true,
-			"venueParking": {
-				"garage": false,
-				"street": true,
-				"validated": false,
-				"lot": false,
-				"valet": false
-			}
+		{
+			"venueId": 0,
+			"name": "Stadsbiblioteket",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Vasastaden",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": false
+			},
+			"title": "Great Books Reading & Discussion Program: Aristotle's 'On Tragedy'",
+			"description": "Explore the classics. This week we will discuss Aristotle's 'On Tragedy'",
+			"category": "knowledge",
+			"date": "22017-11-02",
+			"start": "12:30",
+			"end": "13:30",
+			"ticket": false
 		},
-		"title": "Stories and songs for children 0-7 months",
-		"description": "Stories (\"Ramsor\") and songs for the youngest children 0-7 months and their adults.",
-		"category": "music",
-		"date": "2017-11-01",
-		"start": "11:00",
-		"end": "11:30",
-		"ticket": true,
-		"ticketLink": "http://bit.ly/2yYpVPf"
-	}]
+		{
+			"venueId": 0,
+			"name": "Stadsbiblioteket",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Vasastaden",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": false
+			},
+			"title": "Stories and songs for children 0-7 months",
+			"description": "Stories (\"Ramsor\") and songs for the youngest children 0-7 months and their adults.",
+			"category": "music",
+			"date": "2017-11-03",
+			"start": "11:00",
+			"end": "11:30",
+			"ticket": true,
+			"ticketLink": "http://bit.ly/2yYpVPf"
+		},
+		{
+			"venueId": 0,
+			"name": "Stadsbiblioteket",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Vasastaden",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": false
+			},
+			"title": "Pokeman Card Game",
+			"description": "Pokémon Club chat, trade and play the Pokémon trading card game. Open to all. ",
+			"category": "entertainment",
+			"date": "2017-11-04",
+			"start": "13:00",
+			"end": "15:00",
+			"ticket": false
+		},
+		{
+			"venueId": 1,
+			"name": "Grona Lund",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Djurgården",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-23:00",
+				"tuesday": "10:00-23:00",
+				"wednesday": "10:00-23:00",
+				"thursday": "10:00-23:00",
+				"friday": "10:00-23:00",
+				"saturday": "10:00-23:00",
+				"sunday": "10:00-21:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "Halloween at Grona Lund",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"category": "entertainment",
+			"date": "2017-11-01",
+			"start": "18:00",
+			"end": "22:00",
+			"ticket": true,
+			"ticketLink": "hhttp://bit.ly/2zeH4DM"
+		},
+		{
+			"venueId": 1,
+			"name": "Grona Lund",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Djurgården",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-23:00",
+				"tuesday": "10:00-23:00",
+				"wednesday": "10:00-23:00",
+				"thursday": "10:00-23:00",
+				"friday": "10:00-23:00",
+				"saturday": "10:00-23:00",
+				"sunday": "10:00-21:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "Halloween at Grona Lund",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"category": "entertainment",
+			"date": "2017-11-02",
+			"start": "18:00",
+			"end": "22:00",
+			"ticket": true,
+			"ticketLink": "hhttp://bit.ly/2zeH4DM"
+		},
+		{
+			"venueId": 1,
+			"name": "Grona Lund",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Djurgården",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-23:00",
+				"tuesday": "10:00-23:00",
+				"wednesday": "10:00-23:00",
+				"thursday": "10:00-23:00",
+				"friday": "10:00-23:00",
+				"saturday": "10:00-23:00",
+				"sunday": "10:00-21:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "Halloween at Grona Lund",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"category": "entertainment",
+			"date": "2017-11-03",
+			"start": "18:00",
+			"end": "22:00",
+			"ticket": true,
+			"ticketLink": "hhttp://bit.ly/2zeH4DM"
+		},
+		{
+			"venueId": 1,
+			"name": "Grona Lund",
+			"address": "Sveavägen 73",
+			"neighbourhood": "Djurgården",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-23:00",
+				"tuesday": "10:00-23:00",
+				"wednesday": "10:00-23:00",
+				"thursday": "10:00-23:00",
+				"friday": "10:00-23:00",
+				"saturday": "10:00-23:00",
+				"sunday": "10:00-21:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": true,
+				"venueParking": true
+			},
+			"title": "Halloween at Grona Lund",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"category": "entertainment",
+			"date": "2017-11-04",
+			"start": "18:00",
+			"end": "22:00",
+			"ticket": true,
+			"ticketLink": "hhttp://bit.ly/2zeH4DM"
+		},
+		{
+			"venueId": 2,
+			"name": "Stadion",
+			"address": "Lidingövägen",
+			"neighbourhood": "Östermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "Sabina Ddumba on tour",
+			"description": "In just a few years, Sabina Ddumba has secured her place as one of Sweden's most brilliant musical stars. This summer, festival visitors to Popaganda, Way Out West and the Bråvalla Festival got to experience her on stage and now get even more chances. Until spring 2018 she is on a Swedish tour with 16 inaugural gigs around the country and in Stockholms Stadion. Tickets to the concerts are out for sale.",
+			"category": "music",
+			"date": "2017-11-01",
+			"start": "19:30",
+			"end": "21:30",
+			"ticket": true,
+			"ticketLink": "http://bit.ly/2guhLK5"
+		}, {
+			"venueId": 2,
+			"name": "Stadion",
+			"address": "Lidingövägen",
+			"neighbourhood": "Östermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "Changes; Thomas Di Leva",
+			"description": "The show 'Changes' is exclusively a tribute to David Bowie, where the audience gets to enjoy Bowie's greatest hits, interpreted and arranged by Thomas Di Leva accompanied by some of Sweden's best musicians on stage.",
+			"category": "music",
+			"date": "2017-11-02",
+			"start": "21:00",
+			"end": "22:30",
+			"ticket": true,
+			"ticketLink": "http://bit.ly/2zxaP3E"
+		}, {
+			"venueId": 2,
+			"name": "Stadion",
+			"address": "Lidingövägen",
+			"neighbourhood": "Östermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "Open House; The Olymic Games of 19122",
+			"description": "The Stockholm Stadium, often called the Olympic Stadium, was built for the 1912 Olympic Games and is still one of the world's oldest active Olympic venues. The stadium itself is a live sports and cultural history memorial with a nice atmosphere. To the stadium is now the permanent exhibition Stadion Stockholm 1912 which, with lots of pictures and objects, tells the story of the Stadium and the 'Sunshine Olympiadas' in 1912. During the Open House there is both guided tour of the stadium itself and in the part that houses the 1912 exhibition.",
+			"category": "knowledge",
+			"date": "2017-11-03",
+			"start": "13:00",
+			"end": "17:00",
+			"ticket": false
+		}, {
+			"venueId": 2,
+			"name": "Stadion",
+			"address": "Lidingövägen",
+			"neighbourhood": "Östermalm",
+			"isOpen": true,
+			"hours": {
+				"monday": "10:00-21:00",
+				"tuesday": "10:00-21:00",
+				"wednesday": "10:00-21:00",
+				"thursday": "10:00-21:00",
+				"friday": "10:00-19:00",
+				"saturday": "11:00-17:00",
+				"sunday": "11:00-17:00"
+			},
+			"attributes": {
+				"restaurantInside": true,
+				"restaurantsCloseBy": false,
+				"venueParking": true
+			},
+			"title": "BAUHAUS-Galan, IAAF Diamond League",
+			"description": "Men: 100 m, 800 m, 3000/5000 m, 400 m and spear. Women: 200 m, 400 m, 1500 m, 3000 m and discus.",
+			"category": "entertainment",
+			"date": "2017-11-04",
+			"start": "19:00",
+			"end": "22:00",
+			"ticket": true,
+			"ticketLink": "http://bit.ly/2yS0fad"
+		}
+	]
 }
