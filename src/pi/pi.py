@@ -19,10 +19,22 @@ ser.baudrate = 9600
 
 def handleButton(message):
 	value = int(message)
-	if 1024 <= value <= 1000:
+	if 1000 <= value <= 1024:
 		print "B1"
 	elif 800 <= value <= 900:
 		print "B2"
+	elif 600 <= value <= 660:
+		print "B3"
+	elif 320 <= value <= 380:
+		print "B4"
+	elif 200 <= value <= 240:
+		print "B5"
+	elif 150 <= value <= 185:
+		print "B6"
+	elif 90 <= value <= 110:
+		print "B7"
+	elif value < 90:
+		print "B0"
 	else:
 		print value
 
