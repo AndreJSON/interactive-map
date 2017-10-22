@@ -1,6 +1,7 @@
 import serial
 import time
 import requests
+import re
 
 FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
@@ -12,12 +13,30 @@ DAY_4 = '2017-11-04'
 
 selected_day = DAY_1
 
-ser = serial.Serial("/dev/ttyACM1", 9600)
+ser = serial.Serial("/dev/ttyACM0", 9600)
 ser.baudrate = 9600
 
 
 def handleButton(message):
-	print message
+	value = int(message)
+	if 1000 <= value <= 1024:
+		print "B1"
+	elif 800 <= value <= 900:
+		print "B2"
+	elif 600 <= value <= 660:
+		print "B3"
+	elif 320 <= value <= 380:
+		print "B4"
+	elif 200 <= value <= 240:
+		print "B5"
+	elif 150 <= value <= 185:
+		print "B6"
+	elif 90 <= value <= 110:
+		print "B7"
+	elif value < 90:
+		print "B0"
+	else:
+		print value
 
 def doNewDayStuff():
 	print selected_day
@@ -36,15 +55,29 @@ def handleRotary(message):
 	if tmp != selected_day:  # Only if new day was selected.
 		doNewDayStuff()
 
+def getMessageType(message):
+	if len(message) == 0:
+		return "invalid"
+	if message[0] == "E":
+		return "echo"
+	elif message[0] == "B" and len(message) == 5 and re.match("[0-9]{4}",message[1:]):
+		return "button"
+	elif message[0] == "R" and len(message) == 2 and message[1] in "012345678":
+		return "rotary"
+	else:
+		return "invalid"
+
+
 def doStuff(message):
-	if message[0] == "E":  # Echo
+	messageType = getMessageType(message)
+	if messageType == "echo":
 		print message[1:]
-	elif message[0] == "B":  # Button
+	elif messageType == "button":
 		handleButton(message[1:])
-	elif message[0] == "R":  # Rotary
+	elif messageType == "rotary":
 		handleRotary(message[1:])
-	else:  # Something faulty probably, just print it.
-		print message
+	else:  # Something is wrong with the message, so we dump it.
+		print "INVALID MESSAGE: " + message
 
 def sendInitialMessages():
 	doNewDayStuff()
