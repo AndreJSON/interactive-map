@@ -45,14 +45,18 @@ void setup() {
 }
 
 void loop() {
-  // if the code is right, no.1 RGB LED would blink in red
-  for (int i=0;i<2;i++){
-      pixel1.setPixelColor(0,pixel1.Color(255,0,0)); // red
-      pixel1.show();
-      delay(delayval);
-      pixel1.setPixelColor(0,pixel1.Color(0,0,0)); // turn off
-      pixel1.show();
-      delay(delayval);
-
-  }
+  pixel1.setPixelColor(0,pixel1.Color(0,0,0)); // red
+  pixel1.show();
+  pixel2.setPixelColor(0,pixel2.Color(0,0,0)); // red
+  pixel2.show();
+  pixel3.setPixelColor(0,pixel3.Color(0,0,0)); // red
+  pixel3.show();
+  pixel4.setPixelColor(0,pixel4.Color(0,0,0)); // red
+  pixel4.show();
+  pixel5.setPixelColor(0,pixel5.Color(150,0,150)); // red
+  pixel5.show();
+  pixel6.setPixelColor(0,pixel6.Color(150,150,0)); // red
+  pixel6.show();
+  pixel7.setPixelColor(0,pixel7.Color(150,150,150)); // red
+  pixel7.show();
 }
