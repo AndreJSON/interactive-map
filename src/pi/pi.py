@@ -68,7 +68,7 @@ def getMessageType(message):
 		return "invalid"
 
 
-def doStuff(message):
+def doStuff(message, events):
 	messageType = getMessageType(message)
 	if messageType == "echo":
 		print message[1:]
@@ -79,8 +79,18 @@ def doStuff(message):
 	else:  # Something is wrong with the message, so we dump it.
 		print "INVALID MESSAGE: " + message
 
-def sendInitialMessages():
+def sendInitialMessages(events):
+	orderPrint(events[0])
 	doNewDayStuff()
+
+def orderPrint(event):
+	message = "P"
+	message += "Hi,\n"
+	message += "this is a message\n"
+	message += "BR\n"
+	message += "Name Lastname\n"
+	message += "\n\n\n\n\n\n"
+	sendMessage(message)
 
 def setLed(led, state):
 	sendMessage("L" + str(led) + str(state))
@@ -109,13 +119,13 @@ def getEvents():
 	return req.json()["events"]
 
 def loop(events):
-	sendInitialMessages()
+	sendInitialMessages(events)
 	while True:
 		message = readMessage()
 		if message is None:
 			time.sleep(0.02)  # Wait 20ms before checking for messages again.
 		else:
-			doStuff(message)
+			doStuff(message, events)
 
 def main():
 	events = getEvents()

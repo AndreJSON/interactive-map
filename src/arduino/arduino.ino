@@ -11,8 +11,8 @@ const int led4 = 4;
 const int led5 = 5;
 const int led6 = 6;
 const int led7 = 7;
-const int printerTX = 9;
-const int printerRX = 10;
+const int printerTX = 10;
+const int printerRX = 9;
 SoftwareSerial Thermal(printerTX, printerRX);
 const int outputA = 11; //CLK of rot
 const int outputB = 12; //DT of rot
@@ -79,7 +79,6 @@ void processPrinterMessage() {
   for (int i = 1; i < messagePos; i++) {
     Thermal.write(message[i]);
   }
-  Thermal.write(10);
   Thermal.write(10);
   Thermal.write(10);
   Thermal.write(10);
