@@ -22,8 +22,8 @@ Adafruit_NeoPixel pixel7 = Adafruit_NeoPixel(1, led7, NEO_RGB + NEO_KHZ400);
 const int printerTX = 10;
 const int printerRX = 9;
 SoftwareSerial Thermal(printerTX, printerRX);
-const int outputA = 11; //CLK of rot
-const int outputB = 12; //DT of rot
+const int outputA = 7; //CLK of rot
+const int outputB = 8; //DT of rot
 char rotCounter = 0; 
 int aState;
 int aLastState;
@@ -31,6 +31,7 @@ char message[1000];
 int messagePos = 0;
 
 void setup() {
+  Serial.begin(9600);
   pinMode(led0, OUTPUT);
   pixel1.begin();
   pixel2.begin();
@@ -67,7 +68,6 @@ void setup() {
   Thermal.write(35);
   int printSetting = (15<<4) | 15;
   Thermal.write(printSetting);
-  Serial.begin(9600);
 }
 
 void readMessage() {
@@ -155,7 +155,7 @@ void readSensors() {
     readRotary();
   }
   if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
-    readButtons();
+    //readButtons();
   }
 }
 
