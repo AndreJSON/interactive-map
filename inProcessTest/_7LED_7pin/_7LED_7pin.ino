@@ -8,17 +8,25 @@
 
 // Which pin on the Arduino is connected to the NeoPixels?
 // On a Trinket or Gemma we suggest changing this to 1
-#define PIN            0
+#define START_PIN      0
 
 // How many NeoPixels are attached to the Arduino?
-#define NUMPIXELS      16
+#define NUMPIXELS      1
 
 // When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
 // Note that for older NeoPixel strips you might need to change the third parameter--see the strandtest
 // example for more information on possible values.
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+// auto pixels = calloc(7, sizeof(Adafruit_NeoPixel));
+Adafruit_NeoPixel pixel1 = Adafruit_NeoPixel(NUMPIXELS, START_PIN, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel2 = Adafruit_NeoPixel(NUMPIXELS, START_PIN+1, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel3 = Adafruit_NeoPixel(NUMPIXELS, START_PIN+2, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel4 = Adafruit_NeoPixel(NUMPIXELS, START_PIN+3, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel5 = Adafruit_NeoPixel(NUMPIXELS, START_PIN+4, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel6 = Adafruit_NeoPixel(NUMPIXELS, START_PIN+5, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel7 = Adafruit_NeoPixel(NUMPIXELS, START_PIN+6, NEO_RGB + NEO_KHZ400);
 
-int delayval = 500; // delay for half a second
+
+int delayval = 2000; // delay for half a second
 
 void setup() {
   // This is for Trinket 5V 16MHz, you can remove these three lines if you are not using a Trinket
@@ -27,21 +35,28 @@ void setup() {
 #endif
   // End of trinket special code
 
-  pixels.begin(); // This initializes the NeoPixel library.
+  pixel1.begin(); // This initializes the NeoPixel library.
+  pixel2.begin();
+  pixel3.begin();
+  pixel4.begin();
+  pixel5.begin();
+  pixel6.begin();
+  pixel7.begin();
 }
 
 void loop() {
-
-  // For a set of NeoPixels the first NeoPixel is 0, second is 1, all the way up to the count of pixels minus one.
-
-  for(int i=0;i<NUMPIXELS;i++){
-
-    // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-    pixels.setPixelColor(i, pixels.Color(0,150,0)); // Moderately bright green color.
-
-    pixels.show(); // This sends the updated pixel color to the hardware.
-
-    delay(delayval); // Delay for a period of time (in milliseconds).
-
-  }
+  pixel1.setPixelColor(0,pixel1.Color(0,0,0)); // red
+  pixel1.show();
+  pixel2.setPixelColor(0,pixel2.Color(0,0,0)); // red
+  pixel2.show();
+  pixel3.setPixelColor(0,pixel3.Color(0,0,0)); // red
+  pixel3.show();
+  pixel4.setPixelColor(0,pixel4.Color(0,0,0)); // red
+  pixel4.show();
+  pixel5.setPixelColor(0,pixel5.Color(150,0,150)); // red
+  pixel5.show();
+  pixel6.setPixelColor(0,pixel6.Color(150,150,0)); // red
+  pixel6.show();
+  pixel7.setPixelColor(0,pixel7.Color(150,150,150)); // red
+  pixel7.show();
 }
