@@ -40,6 +40,7 @@ def handleButton(message):
 
 def doNewDayStuff():
 	print selected_day
+	setLed("6", "Y")
 
 def handleRotary(message):
 	global selected_day
@@ -80,7 +81,7 @@ def doStuff(message, events):
 		print "INVALID MESSAGE: " + message
 
 def sendInitialMessages(events):
-	orderPrint(events[0])
+	#orderPrint(events[0])
 	doNewDayStuff()
 
 def orderPrint(event):
