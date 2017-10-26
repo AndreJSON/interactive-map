@@ -103,13 +103,13 @@ void processLedMessage() {
   Serial.end();
   switch(message[1]) {
     case '0': digitalWrite(led0, message[2] == '1'? HIGH:LOW);break;
-    case '1': setLedColor(&pixel1, message[2]);break;
-    case '2': setLedColor(&pixel2, message[2]);break;
-    case '3': setLedColor(&pixel3, message[2]);break;
-    case '4': setLedColor(&pixel4, message[2]);break;
-    case '5': setLedColor(&pixel5, message[2]);break;
-    case '6': setLedColor(&pixel6, message[2]);break;
-    case '7': setLedColor(&pixel7, message[2]);break;
+    case '1': setLedColor(&pixel1, message[2]); break;
+    case '2': setLedColor(&pixel2, message[2]); break;
+    case '3': setLedColor(&pixel3, message[2]); break;
+    case '4': setLedColor(&pixel4, message[2]); break;
+    case '5': setLedColor(&pixel5, message[2]); break;
+    case '6': setLedColor(&pixel6, message[2]); break;
+    case '7': setLedColor(&pixel7, message[2]); break;
   }
   Serial.begin(9600);
 }

@@ -47,12 +47,25 @@ def doNewDayStuff():
 	global selectedEvents
 	selectedEvents = []
 	print selectedDay
-	for i in range(0,7):
-		selectedEvents.append(findEvent(i))
-	#knowledge B
-	#music R
-	#sports G
-	#entertainment Y
+	for i in range(1,8):
+		time.sleep(0.01)  # Needed because the arduino closes and opens serial port when told to light a led.
+		event = findEvent(i)
+		if event is not None:
+			print event["venueId"]
+			print event["category"]
+		selectedEvents.append(event)
+		if event is None:
+			setLed(str(i), "N")
+		elif event["category"] == "music":
+			setLed(str(i), "R")
+		elif event["category"] == "knowledge":
+			setLed(str(i), "B")
+		elif event["category"] == "sports":
+			setLed(str(i), "G")
+		elif event["category"] == "entertainment":
+			setLed(str(i), "Y")
+		else:
+			setLed(str(i), "N")
 
 def handleRotary(message):
 	global selectedDay

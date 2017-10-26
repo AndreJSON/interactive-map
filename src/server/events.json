@@ -1,6 +1,6 @@
 {
 	"events": [{
-			"venueId": 0,
+			"venueId": 2,
 			"name": "Stadsbiblioteket",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Vasastaden",
@@ -29,7 +29,7 @@
 			"ticketLink": "http://bit.ly/2yYpVPf"
 		},
 		{
-			"venueId": 0,
+			"venueId": 2,
 			"name": "Stadsbiblioteket",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Vasastaden",
@@ -57,7 +57,7 @@
 			"ticket": false
 		},
 		{
-			"venueId": 0,
+			"venueId": 2,
 			"name": "Stadsbiblioteket",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Vasastaden",
@@ -86,7 +86,7 @@
 			"ticketLink": "http://bit.ly/2yYpVPf"
 		},
 		{
-			"venueId": 0,
+			"venueId": 2,
 			"name": "Stadsbiblioteket",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Vasastaden",
@@ -114,8 +114,8 @@
 			"ticket": false
 		},
 		{
-			"venueId": 1,
-			"name": "Grona Lund",
+			"venueId": 5,
+			"name": "Gröna Lund",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Djurgården",
 			"isOpen": true,
@@ -143,8 +143,8 @@
 			"ticketLink": "hhttp://bit.ly/2zeH4DM"
 		},
 		{
-			"venueId": 1,
-			"name": "Grona Lund",
+			"venueId": 5,
+			"name": "Gröna Lund",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Djurgården",
 			"isOpen": true,
@@ -172,8 +172,8 @@
 			"ticketLink": "hhttp://bit.ly/2zeH4DM"
 		},
 		{
-			"venueId": 1,
-			"name": "Grona Lund",
+			"venueId": 5,
+			"name": "Gröna Lund",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Djurgården",
 			"isOpen": true,
@@ -201,8 +201,8 @@
 			"ticketLink": "hhttp://bit.ly/2zeH4DM"
 		},
 		{
-			"venueId": 1,
-			"name": "Grona Lund",
+			"venueId": 5,
+			"name": "Gröna Lund",
 			"address": "Sveavägen 73",
 			"neighbourhood": "Djurgården",
 			"isOpen": true,
@@ -230,7 +230,7 @@
 			"ticketLink": "hhttp://bit.ly/2zeH4DM"
 		},
 		{
-			"venueId": 2,
+			"venueId": 1,
 			"name": "Stadion",
 			"address": "Lidingövägen",
 			"neighbourhood": "Östermalm",
@@ -258,7 +258,7 @@
 			"ticket": true,
 			"ticketLink": "http://bit.ly/2guhLK5"
 		}, {
-			"venueId": 2,
+			"venueId": 1,
 			"name": "Stadion",
 			"address": "Lidingövägen",
 			"neighbourhood": "Östermalm",
@@ -286,7 +286,7 @@
 			"ticket": true,
 			"ticketLink": "http://bit.ly/2zxaP3E"
 		}, {
-			"venueId": 2,
+			"venueId": 1,
 			"name": "Stadion",
 			"address": "Lidingövägen",
 			"neighbourhood": "Östermalm",
@@ -313,7 +313,7 @@
 			"end": "17:00",
 			"ticket": false
 		}, {
-			"venueId": 2,
+			"venueId": 1,
 			"name": "Stadion",
 			"address": "Lidingövägen",
 			"neighbourhood": "Östermalm",
@@ -396,7 +396,7 @@
 			"ticket": true,
 			"ticketLink": "http://bit.ly/2i0A0Xq"
 		}, {
-			"venueId": 4,
+			"venueId": 6,
 			"name": "Fotografiska",
 			"address": "Stadsgårdshamnen 22",
 			"neighbourhood": "Södermalm",
@@ -423,7 +423,7 @@
 			"end": "13:30",
 			"ticket": true
 		}, {
-			"venueId": 4,
+			"venueId": 6,
 			"name": "Fotografiska",
 			"address": "Stadsgårdshamnen 22",
 			"neighbourhood": "Södermalm",
@@ -450,7 +450,7 @@
 			"end": "01:00",
 			"ticket": true
 		}, {
-			"venueId": 5,
+			"venueId": 7,
 			"name": "Trädgården",
 			"address": "Hammarby Slussväg 2",
 			"neighbourhood": "Södermalm",
@@ -477,7 +477,7 @@
 			"end": "18:30",
 			"ticket": false
 		}, {
-			"venueId": 5,
+			"venueId": 7,
 			"name": "Trädgården",
 			"address": "Hammarby Slussväg 2",
 			"neighbourhood": "Södermalm",
@@ -504,7 +504,7 @@
 			"end": "23:30",
 			"ticket": false
 		}, {
-			"venueId": 6,
+			"venueId": 4,
 			"name": "Gamla Stan",
 			"address": "Prästgatan 24",
 			"neighbourhood": "Gamla Stan",
@@ -532,7 +532,7 @@
 			"ticket": true,
 			"ticketLink": "www.runwithmestockholm.com"
 		}, {
-			"venueId": 6,
+			"venueId": 4,
 			"name": "Gamla Stan",
 			"address": "Mälartorget 13",
 			"neighbourhood": "Gamla Stan",
