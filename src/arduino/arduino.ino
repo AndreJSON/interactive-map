@@ -31,7 +31,6 @@ char message[1000];
 int messagePos = 0;
 
 void setup() {
-  Serial.begin(9600);
   pinMode(led0, OUTPUT);
   pixel1.begin();
   pixel2.begin();
@@ -68,6 +67,7 @@ void setup() {
   Thermal.write(35);
   int printSetting = (15<<4) | 15;
   Thermal.write(printSetting);
+  Serial.begin(9600);
 }
 
 void readMessage() {
@@ -84,17 +84,34 @@ void readMessage() {
   }
 }
 
+void setLedColor(Adafruit_NeoPixel *p, char c) {
+  if (c == 'R') {
+    (*p).setPixelColor(0,(*p).Color(50,0,0));
+  } else if (c == 'G') {
+    (*p).setPixelColor(0,(*p).Color(0,50,0));
+  } else if (c == 'B') {
+    (*p).setPixelColor(0,(*p).Color(0,0,50));
+  } else if (c == 'Y') {
+    (*p).setPixelColor(0,(*p).Color(50,50,0));
+  } else {
+    (*p).setPixelColor(0,(*p).Color(0,0,0));
+  }
+  (*p).show();
+}
+
 void processLedMessage() {
+  Serial.end();
   switch(message[1]) {
     case '0': digitalWrite(led0, message[2] == '1'? HIGH:LOW);break;
-    case '1': pixel1.setPixelColor(0,pixel1.Color(50,0,0));pixel1.show();break;
-    case '2': pixel2.setPixelColor(0,pixel2.Color(50,0,0));pixel2.show();break;
-    case '3': pixel3.setPixelColor(0,pixel3.Color(50,0,0));pixel3.show();break;
-    case '4': pixel4.setPixelColor(0,pixel4.Color(50,0,0));pixel4.show();break;
-    case '5': pixel5.setPixelColor(0,pixel5.Color(50,0,0));pixel5.show();break;
-    case '6': pixel6.setPixelColor(0,pixel6.Color(50,0,0));pixel6.show();break;
-    case '7': pixel7.setPixelColor(0,pixel7.Color(50,0,0));pixel7.show();break;
+    case '1': setLedColor(&pixel1, message[2]);break;
+    case '2': setLedColor(&pixel2, message[2]);break;
+    case '3': setLedColor(&pixel3, message[2]);break;
+    case '4': setLedColor(&pixel4, message[2]);break;
+    case '5': setLedColor(&pixel5, message[2]);break;
+    case '6': setLedColor(&pixel6, message[2]);break;
+    case '7': setLedColor(&pixel7, message[2]);break;
   }
+  Serial.begin(9600);
 }
 
 void processPrinterMessage() {

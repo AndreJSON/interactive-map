@@ -36,20 +36,23 @@ def handleButton(message):
 		print "B7"
 	elif value < 90:
 		print "B0"
-	else:
+	else:  # Some unexpected value, problem in circuit, noise or intervals need to be changed.
 		print value
 
 def findEvent(venueId):
 	tmp = [event for event in events if (event["date"] == selectedDay and event["venueId"] == venueId)]
-	return tmp[0] if len(tmp) == 1 else {}
+	return tmp[0] if len(tmp) == 1 else None
 
 def doNewDayStuff():
 	global selectedEvents
 	selectedEvents = []
 	print selectedDay
 	for i in range(0,7):
-		selectedEvents[i] = findEvent(i)
-		print selectedEvents[i]
+		selectedEvents.append(findEvent(i))
+	#knowledge B
+	#music R
+	#sports G
+	#entertainment Y
 
 def handleRotary(message):
 	global selectedDay
