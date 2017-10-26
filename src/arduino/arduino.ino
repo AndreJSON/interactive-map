@@ -1,21 +1,29 @@
 #include <SoftwareSerial.h>
+#include <Adafruit_NeoPixel.h>
 const int FAULTY_DATA = -1;
 const int START_MESSAGE = 1;
 const int END_MESSAGE = 2;
 const int buttonPin = A0;
 const int led0 = 13; //Special built in led
-const int led1 = 1;
-const int led2 = 2;
-const int led3 = 3;
-const int led4 = 4;
-const int led5 = 5;
-const int led6 = 6;
-const int led7 = 7;
-const int printerTX = 9;
-const int printerRX = 10;
+const int led1 = 0;
+const int led2 = 1;
+const int led3 = 2;
+const int led4 = 3;
+const int led5 = 4;
+const int led6 = 5;
+const int led7 = 6;
+Adafruit_NeoPixel pixel1 = Adafruit_NeoPixel(1, led1, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel2 = Adafruit_NeoPixel(1, led2, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel3 = Adafruit_NeoPixel(1, led3, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel4 = Adafruit_NeoPixel(1, led4, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel5 = Adafruit_NeoPixel(1, led5, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel6 = Adafruit_NeoPixel(1, led6, NEO_RGB + NEO_KHZ400);
+Adafruit_NeoPixel pixel7 = Adafruit_NeoPixel(1, led7, NEO_RGB + NEO_KHZ400);
+const int printerTX = 10;
+const int printerRX = 9;
 SoftwareSerial Thermal(printerTX, printerRX);
-const int outputA = 11; //CLK of rot
-const int outputB = 12; //DT of rot
+const int outputA = 7; //CLK of rot
+const int outputB = 8; //DT of rot
 char rotCounter = 0; 
 int aState;
 int aLastState;
@@ -25,13 +33,27 @@ int messagePos = 0;
 void setup() {
   Serial.begin(9600);
   pinMode(led0, OUTPUT);
-  pinMode(led1, OUTPUT);
-  pinMode(led2, OUTPUT);
-  pinMode(led3, OUTPUT);
-  pinMode(led4, OUTPUT);
-  pinMode(led5, OUTPUT);
-  pinMode(led6, OUTPUT);
-  pinMode(led7, OUTPUT);
+  pixel1.begin();
+  pixel2.begin();
+  pixel3.begin();
+  pixel4.begin();
+  pixel5.begin();
+  pixel6.begin();
+  pixel7.begin();
+  pixel1.setPixelColor(0,pixel1.Color(0,0,0));
+  pixel1.show();
+  pixel2.setPixelColor(0,pixel2.Color(0,0,0));
+  pixel2.show();
+  pixel3.setPixelColor(0,pixel3.Color(0,0,0));
+  pixel3.show();
+  pixel4.setPixelColor(0,pixel4.Color(0,0,0));
+  pixel4.show();
+  pixel5.setPixelColor(0,pixel5.Color(0,0,0));
+  pixel5.show();
+  pixel6.setPixelColor(0,pixel6.Color(0,0,0));
+  pixel6.show();
+  pixel7.setPixelColor(0,pixel7.Color(0,0,0));
+  pixel7.show();
   pinMode(buttonPin, INPUT);
   pinMode (outputA,INPUT);
   pinMode (outputB,INPUT);
@@ -65,13 +87,13 @@ void readMessage() {
 void processLedMessage() {
   switch(message[1]) {
     case '0': digitalWrite(led0, message[2] == '1'? HIGH:LOW);break;
-    case '1': digitalWrite(led1, message[2] == '1'? HIGH:LOW);break;
-    case '2': digitalWrite(led2, message[2] == '1'? HIGH:LOW);break;
-    case '3': digitalWrite(led3, message[2] == '1'? HIGH:LOW);break;
-    case '4': digitalWrite(led4, message[2] == '1'? HIGH:LOW);break;
-    case '5': digitalWrite(led5, message[2] == '1'? HIGH:LOW);break;
-    case '6': digitalWrite(led6, message[2] == '1'? HIGH:LOW);break;
-    case '7': digitalWrite(led7, message[2] == '1'? HIGH:LOW);break;
+    case '1': pixel1.setPixelColor(0,pixel1.Color(50,0,0));pixel1.show();break;
+    case '2': pixel2.setPixelColor(0,pixel2.Color(50,0,0));pixel2.show();break;
+    case '3': pixel3.setPixelColor(0,pixel3.Color(50,0,0));pixel3.show();break;
+    case '4': pixel4.setPixelColor(0,pixel4.Color(50,0,0));pixel4.show();break;
+    case '5': pixel5.setPixelColor(0,pixel5.Color(50,0,0));pixel5.show();break;
+    case '6': pixel6.setPixelColor(0,pixel6.Color(50,0,0));pixel6.show();break;
+    case '7': pixel7.setPixelColor(0,pixel7.Color(50,0,0));pixel7.show();break;
   }
 }
 
@@ -79,7 +101,6 @@ void processPrinterMessage() {
   for (int i = 1; i < messagePos; i++) {
     Thermal.write(message[i]);
   }
-  Thermal.write(10);
   Thermal.write(10);
   Thermal.write(10);
   Thermal.write(10);
@@ -134,7 +155,7 @@ void readSensors() {
     readRotary();
   }
   if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
-    readButtons();
+    //readButtons();
   }
 }
 
