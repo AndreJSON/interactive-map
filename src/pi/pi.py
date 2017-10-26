@@ -11,6 +11,7 @@ DAY_2 = '2017-11-02'
 DAY_3 = '2017-11-03'
 DAY_4 = '2017-11-04'
 
+buttonPresses = [0] * 10
 selectedDay = DAY_1
 selectedEvents = []
 events = []
@@ -19,25 +20,31 @@ ser = serial.Serial("/dev/ttyACM0", 9600)
 
 
 def handleButton(message):
+	global buttonPresses
+	buttonPresses.pop(0)  # Remove oldest element.
 	value = int(message)
 	if 1000 <= value <= 1024:
-		print "B1"
+		buttonPresses.append(1)
 	elif 800 <= value <= 900:
-		print "B2"
+		buttonPresses.append(2)
 	elif 600 <= value <= 660:
-		print "B3"
+		buttonPresses.append(3)
 	elif 320 <= value <= 380:
-		print "B4"
+		buttonPresses.append(4)
 	elif 200 <= value <= 240:
-		print "B5"
-	elif 150 <= value <= 185:
-		print "B6"
+		buttonPresses.append(5)
+	elif 130 <= value <= 185:
+		buttonPresses.append(6)
 	elif 90 <= value <= 110:
-		print "B7"
+		buttonPresses.append(7)
 	elif value < 90:
-		print "B0"
+		buttonPresses.append(0)
 	else:  # Some unexpected value, problem in circuit, noise or intervals need to be changed.
 		print value
+		buttonPresses.append(0)
+	if buttonPresses[-1] != 0 and len([num for num in buttonPresses if num == buttonPresses[-1]]) > 4:
+		print "Pressed" + str(buttonPresses[-1])
+
 
 def findEvent(venueId):
 	tmp = [event for event in events if (event["date"] == selectedDay and event["venueId"] == venueId)]
@@ -50,9 +57,6 @@ def doNewDayStuff():
 	for i in range(1,8):
 		time.sleep(0.01)  # Needed because the arduino closes and opens serial port when told to light a led.
 		event = findEvent(i)
-		if event is not None:
-			print event["venueId"]
-			print event["category"]
 		selectedEvents.append(event)
 		if event is None:
 			setLed(str(i), "N")

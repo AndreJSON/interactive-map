@@ -29,6 +29,7 @@ int aState;
 int aLastState;
 char message[1000];
 int messagePos = 0;
+int loopCounter = 0;
 
 void setup() {
   pinMode(led0, OUTPUT);
@@ -171,8 +172,9 @@ void readSensors() {
   if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
     readRotary();
   }
-  if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
-    //readButtons();
+  if (messagePos == 0 && loopCounter > 20) { //Only deal with this now if we don't already have a message pending.
+    loopCounter = 0;
+    readButtons();
   }
 }
 
@@ -194,4 +196,6 @@ void loop() {
   processMessage();
   readSensors();
   sendMessage();
+  loopCounter++;
+  delay(1);
 }
