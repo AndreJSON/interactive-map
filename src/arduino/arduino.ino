@@ -12,6 +12,7 @@ const int led4 = 3;
 const int led5 = 4;
 const int led6 = 5;
 const int led7 = 6;
+const int themeleds = 11;
 Adafruit_NeoPixel pixel1 = Adafruit_NeoPixel(1, led1, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel2 = Adafruit_NeoPixel(1, led2, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel3 = Adafruit_NeoPixel(1, led3, NEO_RGB + NEO_KHZ400);
@@ -33,6 +34,8 @@ int loopCounter = 0;
 
 void setup() {
   pinMode(led0, OUTPUT);
+  pinMode(themeleds, OUTPUT);
+  analogWrite(themeleds, 40);
   pixel1.begin();
   pixel2.begin();
   pixel3.begin();
