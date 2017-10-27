@@ -128,6 +128,9 @@ void processPrinterMessage() {
   Thermal.write(10);
   Thermal.write(10);
   Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
 }
 
 void processMessage() {

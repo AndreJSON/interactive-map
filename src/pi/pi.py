@@ -11,6 +11,7 @@ DAY_2 = '2017-11-02'
 DAY_3 = '2017-11-03'
 DAY_4 = '2017-11-04'
 
+lastPrintTime = time.clock()
 buttonPresses = [0] * 10
 selectedDay = DAY_1
 selectedEvents = []
@@ -43,8 +44,19 @@ def handleButton(message):
 		print value
 		buttonPresses.append(0)
 	if buttonPresses[-1] != 0 and len([num for num in buttonPresses if num == buttonPresses[-1]]) > 4:
-		print "Pressed" + str(buttonPresses[-1])
+		global lastPrintTime
+		now = time.clock()
+		if 100 * (now - lastPrintTime) > 8:  # at least this seconds have passed since last print.
+			lastPrintTime = now
+			print "yo"
+			orderPrint(selectedEvents[buttonPresses[-1]-1])
 
+def orderPrint(event):
+	message = "P"
+	message += "Hi,\n"
+	message += "You pressed "
+	message += event["name"]
+	sendMessage(message.encode("utf-8"))
 
 def findEvent(venueId):
 	tmp = [event for event in events if (event["date"] == selectedDay and event["venueId"] == venueId)]
@@ -97,7 +109,6 @@ def getMessageType(message):
 	else:
 		return "invalid"
 
-
 def doStuff(message):
 	messageType = getMessageType(message)
 	if messageType == "echo":
@@ -112,15 +123,6 @@ def doStuff(message):
 def sendInitialMessages():
 	#orderPrint(events[0])
 	doNewDayStuff()
-
-def orderPrint(event):
-	message = "P"
-	message += "Hi,\n"
-	message += "this is a message\n"
-	message += "BR\n"
-	message += "Name Lastname\n"
-	message += "\n\n\n\n\n\n"
-	sendMessage(message)
 
 def setLed(led, state):
 	sendMessage("L" + str(led) + str(state))

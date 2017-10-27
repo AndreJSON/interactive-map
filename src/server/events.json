@@ -2,7 +2,7 @@
 	"events": [{
 			"venueId": 2,
 			"name": "Stadsbiblioteket",
-			"address": "Sveavägen 73",
+			"address": "Sveavagen 73",
 			"neighbourhood": "Vasastaden",
 			"isOpen": true,
 			"hours": {
@@ -31,7 +31,7 @@
 		{
 			"venueId": 2,
 			"name": "Stadsbiblioteket",
-			"address": "Sveavägen 73",
+			"address": "Sveavagen 73",
 			"neighbourhood": "Vasastaden",
 			"isOpen": true,
 			"hours": {
@@ -59,7 +59,7 @@
 		{
 			"venueId": 2,
 			"name": "Stadsbiblioteket",
-			"address": "Sveavägen 73",
+			"address": "Sveavagen 73",
 			"neighbourhood": "Vasastaden",
 			"isOpen": true,
 			"hours": {
@@ -88,7 +88,7 @@
 		{
 			"venueId": 2,
 			"name": "Stadsbiblioteket",
-			"address": "Sveavägen 73",
+			"address": "Sveavagen 73",
 			"neighbourhood": "Vasastaden",
 			"isOpen": true,
 			"hours": {
@@ -106,7 +106,7 @@
 				"venueParking": false
 			},
 			"title": "Pokeman Card Game",
-			"description": "Pokémon Club chat, trade and play the Pokémon trading card game. Open to all. ",
+			"description": "Pokemon Club chat, trade and play the Pokemon trading card game. Open to all. ",
 			"category": "entertainment",
 			"date": "2017-11-04",
 			"start": "13:00",
@@ -115,9 +115,9 @@
 		},
 		{
 			"venueId": 5,
-			"name": "Gröna Lund",
-			"address": "Sveavägen 73",
-			"neighbourhood": "Djurgården",
+			"name": "Grona Lund",
+			"address": "Sveavagen 73",
+			"neighbourhood": "Djurgarden",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-23:00",
@@ -134,7 +134,7 @@
 				"venueParking": true
 			},
 			"title": "Halloween at Grona Lund",
-			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
 			"category": "entertainment",
 			"date": "2017-11-01",
 			"start": "18:00",
@@ -144,9 +144,9 @@
 		},
 		{
 			"venueId": 5,
-			"name": "Gröna Lund",
-			"address": "Sveavägen 73",
-			"neighbourhood": "Djurgården",
+			"name": "Grona Lund",
+			"address": "Sveavagen 73",
+			"neighbourhood": "Djurgarden",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-23:00",
@@ -163,7 +163,7 @@
 				"venueParking": true
 			},
 			"title": "Halloween at Grona Lund",
-			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
 			"category": "entertainment",
 			"date": "2017-11-02",
 			"start": "18:00",
@@ -173,9 +173,9 @@
 		},
 		{
 			"venueId": 5,
-			"name": "Gröna Lund",
-			"address": "Sveavägen 73",
-			"neighbourhood": "Djurgården",
+			"name": "Grona Lund",
+			"address": "Sveavagen 73",
+			"neighbourhood": "Djurgarden",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-23:00",
@@ -192,7 +192,7 @@
 				"venueParking": true
 			},
 			"title": "Halloween at Grona Lund",
-			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
 			"category": "entertainment",
 			"date": "2017-11-03",
 			"start": "18:00",
@@ -202,9 +202,9 @@
 		},
 		{
 			"venueId": 5,
-			"name": "Gröna Lund",
-			"address": "Sveavägen 73",
-			"neighbourhood": "Djurgården",
+			"name": "Grona Lund",
+			"address": "Sveavagen 73",
+			"neighbourhood": "Djurgarden",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-23:00",
@@ -221,7 +221,7 @@
 				"venueParking": true
 			},
 			"title": "Halloween at Grona Lund",
-			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Området fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skräckzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+			"description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
 			"category": "entertainment",
 			"date": "2017-11-04",
 			"start": "18:00",
@@ -232,8 +232,8 @@
 		{
 			"venueId": 1,
 			"name": "Stadion",
-			"address": "Lidingövägen",
-			"neighbourhood": "Östermalm",
+			"address": "Lidingovagen",
+			"neighbourhood": "Ostermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-21:00",
@@ -250,7 +250,7 @@
 				"venueParking": true
 			},
 			"title": "Sabina Ddumba on tour",
-			"description": "In just a few years, Sabina Ddumba has secured her place as one of Sweden's most brilliant musical stars. This summer, festival visitors to Popaganda, Way Out West and the Bråvalla Festival got to experience her on stage and now get even more chances. Until spring 2018 she is on a Swedish tour with 16 inaugural gigs around the country and in Stockholms Stadion. Tickets to the concerts are out for sale.",
+			"description": "In just a few years, Sabina Ddumba has secured her place as one of Sweden's most brilliant musical stars. This summer, festival visitors to Popaganda, Way Out West and the Bravalla Festival got to experience her on stage and now get even more chances. Until spring 2018 she is on a Swedish tour with 16 inaugural gigs around the country and in Stockholms Stadion. Tickets to the concerts are out for sale.",
 			"category": "music",
 			"date": "2017-11-01",
 			"start": "19:30",
@@ -260,8 +260,8 @@
 		}, {
 			"venueId": 1,
 			"name": "Stadion",
-			"address": "Lidingövägen",
-			"neighbourhood": "Östermalm",
+			"address": "Lidingovagen",
+			"neighbourhood": "Ostermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-21:00",
@@ -288,8 +288,8 @@
 		}, {
 			"venueId": 1,
 			"name": "Stadion",
-			"address": "Lidingövägen",
-			"neighbourhood": "Östermalm",
+			"address": "Lidingovagen",
+			"neighbourhood": "Ostermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-21:00",
@@ -315,8 +315,8 @@
 		}, {
 			"venueId": 1,
 			"name": "Stadion",
-			"address": "Lidingövägen",
-			"neighbourhood": "Östermalm",
+			"address": "Lidingovagen",
+			"neighbourhood": "Ostermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "10:00-21:00",
@@ -361,7 +361,7 @@
 				"venueParking": true
 			},
 			"title": "Fireworks",
-			"description": "City Hall (Stadshuset) is located just on the edge of Lake Mälaren on Kungsholmen. The setting is magical, with the fireworks brilliantly lighting up the skies and falling gently into the waters below. The crowds are warm and friendly but get there early as the crowds are also big.",
+			"description": "City Hall (Stadshuset) is located just on the edge of Lake Malaren on Kungsholmen. The setting is magical, with the fireworks brilliantly lighting up the skies and falling gently into the waters below. The crowds are warm and friendly but get there early as the crowds are also big.",
 			"category": "entertainment",
 			"date": "2017-11-03",
 			"start": "19:00",
@@ -398,8 +398,8 @@
 		}, {
 			"venueId": 6,
 			"name": "Fotografiska",
-			"address": "Stadsgårdshamnen 22",
-			"neighbourhood": "Södermalm",
+			"address": "Stadsgardshamnen 22",
+			"neighbourhood": "Sodermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "09:00-11:00",
@@ -425,8 +425,8 @@
 		}, {
 			"venueId": 6,
 			"name": "Fotografiska",
-			"address": "Stadsgårdshamnen 22",
-			"neighbourhood": "Södermalm",
+			"address": "Stadsgardshamnen 22",
+			"neighbourhood": "Sodermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "09:00-11:00",
@@ -451,9 +451,9 @@
 			"ticket": true
 		}, {
 			"venueId": 7,
-			"name": "Trädgården",
-			"address": "Hammarby Slussväg 2",
-			"neighbourhood": "Södermalm",
+			"name": "Tradgarden",
+			"address": "Hammarby Slussvag 2",
+			"neighbourhood": "Sodermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "closed",
@@ -478,9 +478,9 @@
 			"ticket": false
 		}, {
 			"venueId": 7,
-			"name": "Trädgården",
-			"address": "Hammarby Slussväg 2",
-			"neighbourhood": "Södermalm",
+			"name": "Tradgarden",
+			"address": "Hammarby Slussvag 2",
+			"neighbourhood": "Sodermalm",
 			"isOpen": true,
 			"hours": {
 				"monday": "closed",
@@ -506,7 +506,7 @@
 		}, {
 			"venueId": 4,
 			"name": "Gamla Stan",
-			"address": "Prästgatan 24",
+			"address": "Prastgatan 24",
 			"neighbourhood": "Gamla Stan",
 			"isOpen": true,
 			"hours": {
@@ -524,7 +524,7 @@
 				"venueParking": true
 			},
 			"title": "Run through Stockholm",
-			"description": "Join a local running group or book a guided tour and experience the best of Stockholm while running. Explore the historic Old Town, Djurgården, Södermalm, or the beautiful trails through the forest alongside a friendly local.",
+			"description": "Join a local running group or book a guided tour and experience the best of Stockholm while running. Explore the historic Old Town, Djurgarden, Sodermalm, or the beautiful trails through the forest alongside a friendly local.",
 			"category": "sports",
 			"date": "2017-11-03",
 			"start": "10:00",
@@ -534,7 +534,7 @@
 		}, {
 			"venueId": 4,
 			"name": "Gamla Stan",
-			"address": "Mälartorget 13",
+			"address": "Malartorget 13",
 			"neighbourhood": "Gamla Stan",
 			"isOpen": true,
 			"hours": {
