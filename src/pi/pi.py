@@ -53,9 +53,11 @@ def handleButton(message):
 
 def orderPrint(event):
 	message = "P"
-	message += "Hi,\n"
-	message += "You pressed "
-	message += event["name"]
+	message += event["title"] + "\n"
+	message += "Date: " + event["date"] + "\n"
+	message += "Time: " + event["start"] + " - " + event["end"] + "\n"
+	message += "At: " + event["name"] + ", " + event["address"] + "\n\n"
+	message += event["description"] + "\n"
 	sendMessage(message.encode("utf-8"))
 
 def findEvent(venueId):
