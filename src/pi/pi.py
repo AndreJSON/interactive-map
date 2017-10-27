@@ -3,7 +3,7 @@ import time
 import requests
 import re
 
-DOMAIN = 'localhost'
+DOMAIN = 'l'
 FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'
@@ -44,10 +44,10 @@ def handleButton(message):
 	else:  # Some unexpected value, problem in circuit, noise or intervals need to be changed.
 		print value
 		buttonPresses.append(0)
-	if buttonPresses[-1] != 0 and len([num for num in buttonPresses if num == buttonPresses[-1]]) > 4:
+	if buttonPresses[-1] != 0 and len([num for num in buttonPresses if num == buttonPresses[-1]]) > 4 and selectedEvents[buttonPresses[-1]-1] is not None:
 		global lastPrintTime
 		now = time.clock()
-		if 100 * (now - lastPrintTime) > 8:  # at least this seconds have passed since last print.
+		if 100 * (now - lastPrintTime) > 7:  # at least this seconds have passed since last print.
 			lastPrintTime = now
 			print "yo"
 			orderPrint(selectedEvents[buttonPresses[-1]-1])
