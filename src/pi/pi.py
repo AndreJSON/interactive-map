@@ -3,6 +3,7 @@ import time
 import requests
 import re
 
+DOMAIN = 'localhost'
 FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'
@@ -149,7 +150,8 @@ def sendMessage(message):
 	ser.write(END_MESSAGE)
 
 def getEvents():
-	req = requests.get('http://l:8082/events')
+	global DOMAIN
+	req = requests.get('http://' + DOMAIN + ':8082/events')
 	return req.json()["events"]
 
 def loop():
