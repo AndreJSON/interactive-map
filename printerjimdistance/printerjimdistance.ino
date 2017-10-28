@@ -6,8 +6,9 @@ int heatTime = 80; // The printer can't start receiving data immediately upon po
 int heatInterval = 255;
 char printDensity = 15;
 char printBreakTime = 15;
+int distanceCounter = 0;
 void setup() {
-  Serial.begin(57600); // open serial communication
+  Serial.begin(9600); // open serial communication
   Thermal.begin(19200); // to write to the printer
   initPrinter();
 }
@@ -34,8 +35,16 @@ void loop() {
   float volts = analogRead(sensor) * 0.0048828125; // value from sensor * (5/1024)
   int distance = 13 * pow(volts, -1); // worked out from datasheet graph
   delay(100); // slow down serial port
-  if (distance > 20 && distance < 60) {
-    Serial.println(distance);
+  Serial.println(distance);
+  if (distance > 18 && distance < 300) {
+    distanceCounter++;
+  } else {
+    distanceCounter = 0;
+  }
+  if (distanceCounter > 4) {
+    Serial.println("WHOOOOOOAAAAAAAAAAAAAAA");
+  }
+  /*if (distance > 20 && distance < 60) {
     Thermal.println("Welcome to this EventMap of");
     Thermal.println("Stockholm! Press any building");
     Thermal.println("for event information. Feel");
@@ -46,5 +55,5 @@ void loop() {
     Thermal.write(10);
     delay(1000);
     while (1) {}
-  }
+  }*/
 }
