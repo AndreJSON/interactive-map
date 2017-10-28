@@ -4,6 +4,7 @@ const int FAULTY_DATA = -1;
 const int START_MESSAGE = 1;
 const int END_MESSAGE = 2;
 const int buttonPin = A0;
+const int distanceSensorPin = A1; // not sure about this pin
 const int led0 = 13; //Special built in led
 const int led1 = 0;
 const int led2 = 1;
@@ -20,7 +21,6 @@ Adafruit_NeoPixel pixel4 = Adafruit_NeoPixel(1, led4, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel5 = Adafruit_NeoPixel(1, led5, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel6 = Adafruit_NeoPixel(1, led6, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel7 = Adafruit_NeoPixel(1, led7, NEO_RGB + NEO_KHZ400);
-const int distanceSensor = 2;
 const int printerTX = 10;
 const int printerRX = 9;
 SoftwareSerial Thermal(printerTX, printerRX);
@@ -31,10 +31,11 @@ int aState;
 int aLastState;
 char message[1000];
 int messagePos = 0;
-int loopCounter = 0;
-int distanceCounter = 0;
-int distanceLoopCounter = 0;
-long loopsSinceLastPrint = 496000;
+int loopButtonCounter = 0;
+int loopDistanceSensorCounter = 0;
+// unsigned long previousTime = 0;
+// unsigned long deltaTime = 0;
+
 
 void setup() {
   pinMode(led0, OUTPUT);
@@ -130,6 +131,7 @@ void processPrinterMessage() {
   Thermal.write(10);
   Thermal.write(10);
   Thermal.write(10);
+  Thermal.write(10);
 }
 
 void processMessage() {
@@ -173,41 +175,26 @@ void readButtons() {
   messagePos = 5;
 }
 
-void readDistanceSensor() {
-  float volts = analogRead(distanceSensor) * 0.0048828125; // value from sensor * (5/1024)
+void readDistancSensor(){
+  // 5v
+  float volts = analogRead(distanceSensorPin) * 0.0048828125; // value from sensor * (5/1024)
   int distance = 13 * pow(volts, -1); // worked out from datasheet graph
-  if (distance > 18 && distance < 300) {
-    distanceCounter++;
-  } else {
-    distanceCounter = 0;
-  }
-  if (distanceCounter > 4) {
-    loopsSinceLastPrint = 0;
-    Thermal.println("Welcome to this EventMap of");
-    Thermal.println("Stockholm! Press any building");
-    Thermal.println("for event information. Feel");
-    Thermal.println("free to take the print-out");
-    Thermal.println("with you on-the-go");
-    Thermal.write(10);
-    Thermal.write(10);
-    Thermal.write(10);
-    Thermal.write(10);
-  }
+  message[0] = 'D';
+  message[1] = distance;
+  messagePos = 2 + 0x30;
 }
 
 void readSensors() {
   if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
     readRotary();
   }
-  if (messagePos == 0 && loopCounter > 20) { //Only deal with this now if we don't already have a message pending.
-    loopCounter = 0;
+  if (messagePos == 0 && loopButtonCounter > 20) { //Only deal with this now if we don't already have a message pending.
+    loopButtonCounter = 0;
     readButtons();
   }
-  if(distanceLoopCounter > 50 && loopsSinceLastPrint > 500000) {
-    distanceLoopCounter = 0;
+  if (messagePos == 0 && loopDistanceSensorCounter > 20) { //Only deal with this now if we don't already have a message pending.
+    loopDistanceSensorCounter = 0;
     readDistanceSensor();
-  } else {
-    loopsSinceLastPrint++;
   }
 }
 
@@ -229,7 +216,6 @@ void loop() {
   processMessage();
   readSensors();
   sendMessage();
-  loopCounter++;
-  distanceLoopCounter++;
+  loopButtonCounter++;
   delay(1);
 }
