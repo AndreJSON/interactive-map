@@ -3,7 +3,7 @@ import time
 import requests
 import re
 
-DOMAIN = 'l'
+DOMAIN = 'localhost'
 FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'

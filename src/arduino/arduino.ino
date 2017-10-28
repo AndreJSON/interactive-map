@@ -20,6 +20,7 @@ Adafruit_NeoPixel pixel4 = Adafruit_NeoPixel(1, led4, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel5 = Adafruit_NeoPixel(1, led5, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel6 = Adafruit_NeoPixel(1, led6, NEO_RGB + NEO_KHZ400);
 Adafruit_NeoPixel pixel7 = Adafruit_NeoPixel(1, led7, NEO_RGB + NEO_KHZ400);
+const int distanceSensor = 2;
 const int printerTX = 10;
 const int printerRX = 9;
 SoftwareSerial Thermal(printerTX, printerRX);
@@ -31,6 +32,9 @@ int aLastState;
 char message[1000];
 int messagePos = 0;
 int loopCounter = 0;
+int distanceCounter = 0;
+int distanceLoopCounter = 0;
+long loopsSinceLastPrint = 496000;
 
 void setup() {
   pinMode(led0, OUTPUT);
@@ -126,7 +130,6 @@ void processPrinterMessage() {
   Thermal.write(10);
   Thermal.write(10);
   Thermal.write(10);
-  Thermal.write(10);
 }
 
 void processMessage() {
@@ -170,6 +173,28 @@ void readButtons() {
   messagePos = 5;
 }
 
+void readDistanceSensor() {
+  float volts = analogRead(distanceSensor) * 0.0048828125; // value from sensor * (5/1024)
+  int distance = 13 * pow(volts, -1); // worked out from datasheet graph
+  if (distance > 18 && distance < 300) {
+    distanceCounter++;
+  } else {
+    distanceCounter = 0;
+  }
+  if (distanceCounter > 4) {
+    loopsSinceLastPrint = 0;
+    Thermal.println("Welcome to this EventMap of");
+    Thermal.println("Stockholm! Press any building");
+    Thermal.println("for event information. Feel");
+    Thermal.println("free to take the print-out");
+    Thermal.println("with you on-the-go");
+    Thermal.write(10);
+    Thermal.write(10);
+    Thermal.write(10);
+    Thermal.write(10);
+  }
+}
+
 void readSensors() {
   if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
     readRotary();
@@ -177,6 +202,12 @@ void readSensors() {
   if (messagePos == 0 && loopCounter > 20) { //Only deal with this now if we don't already have a message pending.
     loopCounter = 0;
     readButtons();
+  }
+  if(distanceLoopCounter > 50 && loopsSinceLastPrint > 500000) {
+    distanceLoopCounter = 0;
+    readDistanceSensor();
+  } else {
+    loopsSinceLastPrint++;
   }
 }
 
@@ -199,5 +230,6 @@ void loop() {
   readSensors();
   sendMessage();
   loopCounter++;
+  distanceLoopCounter++;
   delay(1);
 }
