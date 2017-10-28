@@ -149,9 +149,9 @@ void readRotary() {
   aState = digitalRead(outputA);
   if (aState != aLastState){
     if (digitalRead(outputB) == aState) { // if true, anti-clockwise rotation has ocurred.
-      rotCounter++;
-    } else {
       rotCounter--;
+    } else {
+      rotCounter++;
     }
     message[0] = 'R';
     message[1] = (rotCounter + 0x30); //add 0x30 to get correct utf-8 value for digit.

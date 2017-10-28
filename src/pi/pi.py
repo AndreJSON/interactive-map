@@ -11,6 +11,7 @@ DAY_1 = '2017-11-01'
 DAY_2 = '2017-11-02'
 DAY_3 = '2017-11-03'
 DAY_4 = '2017-11-04'
+LINE_LIMIT = 32
 
 lastPrintTime = time.clock()
 buttonPresses = [0] * 10
@@ -47,10 +48,28 @@ def handleButton(message):
 	if buttonPresses[-1] != 0 and len([num for num in buttonPresses if num == buttonPresses[-1]]) > 4 and selectedEvents[buttonPresses[-1]-1] is not None:
 		global lastPrintTime
 		now = time.clock()
-		if 100 * (now - lastPrintTime) > 7:  # at least this seconds have passed since last print.
+		if 100 * (now - lastPrintTime) > 5:  # at least this seconds have passed since last print.
 			lastPrintTime = now
-			print "yo"
 			orderPrint(selectedEvents[buttonPresses[-1]-1])
+
+def formatText(text):
+	res = ""
+	for fileLine in text.split("\n"):
+		while True:
+			line = fileLine[:LINE_LIMIT]
+			if len(line) < LINE_LIMIT:
+				cutOff = LINE_LIMIT
+			else:
+				cutOff = line.rfind(" ")
+				if cutOff == -1:
+					cutOff = LINE_LIMIT
+			res += fileLine[:cutOff] + "\n"
+			fileLine = fileLine[cutOff:]
+			if len(fileLine) == 0:
+				break
+			elif fileLine[0] == " ":
+				fileLine = fileLine[1:]
+	return res
 
 def orderPrint(event):
 	message = "P"
@@ -59,7 +78,7 @@ def orderPrint(event):
 	message += "Time: " + event["start"] + " - " + event["end"] + "\n"
 	message += "At: " + event["name"] + ", " + event["address"] + "\n\n"
 	message += event["description"] + "\n"
-	sendMessage(message.encode("utf-8"))
+	sendMessage(formatText(message.encode("utf-8")))
 
 def findEvent(venueId):
 	tmp = [event for event in events if (event["date"] == selectedDay and event["venueId"] == venueId)]
