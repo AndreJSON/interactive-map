@@ -33,8 +33,13 @@ char message[1000];
 int messagePos = 0;
 int loopCounter = 0;
 int distanceCounter = 0;
+int distanceCounterLocal = 0;
 int distanceLoopCounter = 0;
-long loopsSinceLastPrint = 496000;
+bool distanceFlag = false;                //  false: far; true: close
+int distanceTmp = 0;
+const int distanceCounterThreshold = 5;  // threshold of time interval for no-person-around
+const int distanceThreshold = 14;        // threshold for distance reading from distance sensor
+// long loopsSinceLastPrint = 496000;
 
 void setup() {
   pinMode(led0, OUTPUT);
@@ -173,27 +178,79 @@ void readButtons() {
   messagePos = 5;
 }
 
-void readDistanceSensor() {
+// but the printer only print out white paper
+void printWelcome(){
+  Thermal.println("Welcome to this EventMap of");
+  Thermal.println("Stockholm! Press any building");
+  Thermal.println("for event information. Feel");
+  Thermal.println("free to take the print-out");
+  Thermal.println("with you on-the-go");
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
+  Thermal.write(10);
+}
+
+void readDistanceSensor(){
   float volts = analogRead(distanceSensor) * 0.0048828125; // value from sensor * (5/1024)
   int distance = 13 * pow(volts, -1); // worked out from datasheet graph
-  if (distance > 18 && distance < 300) {
+  Serial.println(distance);
+  // if a person is approaching, print welcome message, the detection has filter capability with window of 4 samples
+  if ((distanceFlag - 0.5)*(distanceThreshold - distance) <= 0)
+  {
+    if (distanceCounterLocal == 0)
+    {
+      distanceCounterLocal++;
+    } else {
+      if ((distance - distanceThreshold)*(distanceTmp - distanceThreshold) <= 0)
+      {
+        distanceCounterLocal = 0;
+      } else {
+        distanceCounterLocal++;
+      }
+    }
+    if (distanceCounterLocal > 4)
+    {
+      distanceFlag = 1 - distanceFlag;
+      if (distanceCounter > distanceCounterThreshold && distanceFlag == true)
+      {
+        printWelcome();     // print welcome message if a person is approaching
+        // Serial.println("----------------");
+        // Serial.println("Welcome!");
+      }
+    }
+  }
+  // time keeping for long distance
+  if (distanceFlag == false)
+  {
     distanceCounter++;
-  } else {
-    distanceCounter = 0;
   }
-  if (distanceCounter > 4) {
-    loopsSinceLastPrint = 0;
-    Thermal.println("Welcome to this EventMap of");
-    Thermal.println("Stockholm! Press any building");
-    Thermal.println("for event information. Feel");
-    Thermal.println("free to take the print-out");
-    Thermal.println("with you on-the-go");
-    Thermal.write(10);
-    Thermal.write(10);
-    Thermal.write(10);
-    Thermal.write(10);
-  }
+  distanceTmp = distance;
 }
+
+// void readDistanceSensor() {
+//   float volts = analogRead(distanceSensor) * 0.0048828125; // value from sensor * (5/1024)
+//   int distance = 13 * pow(volts, -1); // worked out from datasheet graph
+//   if (distance > 18 && distance < 300) {
+//     distanceCounter++;
+//     Serial.println(distance);
+//   } else {
+//     distanceCounter = 0;
+//   }
+//   if (distanceCounter > 4) {
+//     loopsSinceLastPrint = 0;
+//     printWelcome();
+//     Thermal.println("Welcome to this EventMap of");
+//     Thermal.println("Stockholm! Press any building");
+//     Thermal.println("for event information. Feel");
+//     Thermal.println("free to take the print-out");
+//     Thermal.println("with you on-the-go");
+//     Thermal.write(10);
+//     Thermal.write(10);
+//     Thermal.write(10);
+//     Thermal.write(10);
+//   }
+// }
 
 void readSensors() {
   if (messagePos == 0) { //Only deal with this now if we don't already have a message pending.
@@ -203,11 +260,16 @@ void readSensors() {
     loopCounter = 0;
     readButtons();
   }
-  if(distanceLoopCounter > 50 && loopsSinceLastPrint > 500000) {
+  // if(distanceLoopCounter > 50 && loopsSinceLastPrint > 500000) {
+  //   distanceLoopCounter = 0;
+  //   readDistanceSensor();
+  // } else {
+  //   loopsSinceLastPrint++;
+  // }
+  if (distanceLoopCounter > 50) {
+  // if(messagePos == 0 && distanceLoopCounter > 50) {    
     distanceLoopCounter = 0;
     readDistanceSensor();
-  } else {
-    loopsSinceLastPrint++;
   }
 }
 
