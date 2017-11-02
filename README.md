@@ -1,4 +1,4 @@
-#Stockholm Event Map
+# Stockholm Event Map
 
 This is a project performed by Andre Josefsson, Niek Bijman, Jiayao Yu and Jim Tolman for the course Physical Interaction Design at KTH.
 
