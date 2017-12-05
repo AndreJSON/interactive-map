@@ -2,8 +2,9 @@ import serial
 import time
 import requests
 import re
+import json
 
-DOMAIN = '77.53.126.163'
+# DOMAIN = '77.53.126.163'
 FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'
@@ -43,7 +44,7 @@ def handleButton(message):
 	elif value < 90:
 		buttonPresses.append(0)
 	else:  # Some unexpected value, problem in circuit, noise or intervals need to be changed.
-		print value
+		print (value)
 		buttonPresses.append(0)
 	if buttonPresses[-1] != 0 and len([num for num in buttonPresses if num == buttonPresses[-1]]) > 4 and selectedEvents[buttonPresses[-1]-1] is not None:
 		global lastPrintTime
@@ -87,7 +88,7 @@ def findEvent(venueId):
 def doNewDayStuff():
 	global selectedEvents
 	selectedEvents = []
-	print selectedDay
+	print (selectedDay)
 	for i in range(1,8):
 		time.sleep(0.01)  # Needed because the arduino closes and opens serial port when told to light a led.
 		event = findEvent(i)
@@ -134,13 +135,13 @@ def getMessageType(message):
 def doStuff(message):
 	messageType = getMessageType(message)
 	if messageType == "echo":
-		print message[1:]
+		print (message[1:])
 	elif messageType == "button":
 		handleButton(message[1:])
 	elif messageType == "rotary":
 		handleRotary(message[1:])
 	else:  # Something is wrong with the message, so we dump it.
-		print "INVALID MESSAGE: " + message
+		print ("INVALID MESSAGE: " + message)
 
 def sendInitialMessages():
 	#orderPrint(events[0])
@@ -168,10 +169,15 @@ def sendMessage(message):
 	ser.write(message)
 	ser.write(END_MESSAGE)
 
+# def getEvents():
+# 	global DOMAIN
+# 	req = requests.get('http://' + DOMAIN + ':8082/events')
+# 	return req.json()["events"]
+
 def getEvents():
-	global DOMAIN
-	req = requests.get('http://' + DOMAIN + ':8082/events')
-	return req.json()["events"]
+	with open('./server/events.json') as json_data:
+		data = json.load(json_data)
+		return data
 
 def loop():
 	sendInitialMessages()
