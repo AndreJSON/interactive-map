@@ -175,7 +175,7 @@ def sendMessage(message):
 # 	return req.json()["events"]
 
 def getEvents():
-	with open('./server/events.json') as json_data:
+	with open('../server/events.json') as json_data:
 		data = json.load(json_data)
 		return data
 
