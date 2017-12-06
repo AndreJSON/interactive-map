@@ -29,10 +29,6 @@ events = []
 
 ser = serial.Serial("/dev/ttyACM0", 9600)
 
-date = dt.date.today()
-dateStr = date.strftime('%Y-%m-%d')
-
-
 def handleButton(message):
 	global buttonPresses
 	buttonPresses.pop(0)  # Remove oldest element.
@@ -103,7 +99,6 @@ def doNewDayStuff():
 	global selectedEvents
 	selectedEvents = []
 	print (selectedDay)
-	print (dateStr)
 	for i in range(1,8):
 		time.sleep(0.01)  # Needed because the arduino closes and opens serial port when told to light a led.
 		event = findEvent(i)
