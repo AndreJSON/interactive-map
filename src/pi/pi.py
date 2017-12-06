@@ -15,10 +15,10 @@ END_MESSAGE = '\x02'
 # DAY_2 = '2017-11-02'
 # DAY_3 = '2017-11-03'
 # DAY_4 = '2017-11-04'
-DAY_1 = 'DAY_1'
-DAY_2 = 'DAY_2'
-DAY_3 = 'DAY_3'
-DAY_4 = 'DAY_4'
+DAY_1 = 0
+DAY_2 = 1
+DAY_3 = 2
+DAY_4 = 3
 LINE_LIMIT = 32
 
 lastPrintTime = time.clock()
@@ -80,7 +80,7 @@ def formatText(text):
 
 def orderPrint(event):
 	# read system time
-	date = dt.date.today()
+	date = dt.date.today() + dt.timedelta(days=selectedDay)
 	dateStr = date.strftime('%Y-%m-%d')
 	message = "P"
 	message += event["title"] + "\n"
@@ -185,7 +185,7 @@ def sendMessage(message):
 # 	return req.json()["events"]
 
 def getEvents():
-	with open('../server/events.json') as json_data:
+	with open('~/interactive-map/src/server/events_exhibition.json') as json_data:
 		data = json.load(json_data)
 		eventsData = data["events"]
 		return eventsData
