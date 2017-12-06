@@ -1,0 +1,576 @@
+{
+  "events": [
+    {
+      "venueId": 2,
+      "name": "Stadsbiblioteket",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Vasastaden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": false
+      },
+      "title": "Stories and songs for children 0-7 months",
+      "description": "Stories (\"Ramsor\") and songs for the youngest children 0-7 months and their adults.",
+      "category": "music",
+      "date": "DAY_1",
+      "start": "11:00",
+      "end": "11:30",
+      "ticket": true,
+      "ticketLink": "http://bit.ly/2yYpVPf"
+    },
+    {
+      "venueId": 2,
+      "name": "Stadsbiblioteket",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Vasastaden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": false
+      },
+      "title": "Great Books Reading & Discussion Program: Aristotle's 'On Tragedy'",
+      "description": "Explore the classics. This week we will discuss Aristotle's 'On Tragedy'",
+      "category": "knowledge",
+      "date": "DAY_2",
+      "start": "12:30",
+      "end": "13:30",
+      "ticket": false
+    },
+    {
+      "venueId": 2,
+      "name": "Stadsbiblioteket",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Vasastaden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": false
+      },
+      "title": "Stories and songs for children 0-7 months",
+      "description": "Stories (\"Ramsor\") and songs for the youngest children 0-7 months and their adults.",
+      "category": "music",
+      "date": "DAY_3",
+      "start": "11:00",
+      "end": "11:30",
+      "ticket": true,
+      "ticketLink": "http://bit.ly/2yYpVPf"
+    },
+    {
+      "venueId": 2,
+      "name": "Stadsbiblioteket",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Vasastaden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": false
+      },
+      "title": "Pokeman Card Game",
+      "description": "Pokemon Club chat, trade and play the Pokemon trading card game. Open to all. ",
+      "category": "entertainment",
+      "date": "DAY_4",
+      "start": "13:00",
+      "end": "15:00",
+      "ticket": false
+    },
+    {
+      "venueId": 5,
+      "name": "Grona Lund",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Djurgarden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-23:00",
+        "tuesday": "10:00-23:00",
+        "wednesday": "10:00-23:00",
+        "thursday": "10:00-23:00",
+        "friday": "10:00-23:00",
+        "saturday": "10:00-23:00",
+        "sunday": "10:00-21:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "Halloween at Grona Lund",
+      "description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+      "category": "entertainment",
+      "date": "DAY_1",
+      "start": "18:00",
+      "end": "22:00",
+      "ticket": true,
+      "ticketLink": "hhttp://bit.ly/2zeH4DM"
+    },
+    {
+      "venueId": 5,
+      "name": "Grona Lund",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Djurgarden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-23:00",
+        "tuesday": "10:00-23:00",
+        "wednesday": "10:00-23:00",
+        "thursday": "10:00-23:00",
+        "friday": "10:00-23:00",
+        "saturday": "10:00-23:00",
+        "sunday": "10:00-21:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "Halloween at Grona Lund",
+      "description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+      "category": "entertainment",
+      "date": "DAY_2",
+      "start": "18:00",
+      "end": "22:00",
+      "ticket": true,
+      "ticketLink": "hhttp://bit.ly/2zeH4DM"
+    },
+    {
+      "venueId": 5,
+      "name": "Grona Lund",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Djurgarden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-23:00",
+        "tuesday": "10:00-23:00",
+        "wednesday": "10:00-23:00",
+        "thursday": "10:00-23:00",
+        "friday": "10:00-23:00",
+        "saturday": "10:00-23:00",
+        "sunday": "10:00-21:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "Halloween at Grona Lund",
+      "description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+      "category": "entertainment",
+      "date": "DAY_3",
+      "start": "18:00",
+      "end": "22:00",
+      "ticket": true,
+      "ticketLink": "hhttp://bit.ly/2zeH4DM"
+    },
+    {
+      "venueId": 5,
+      "name": "Grona Lund",
+      "address": "Sveavagen 73",
+      "neighbourhood": "Djurgarden",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-23:00",
+        "tuesday": "10:00-23:00",
+        "wednesday": "10:00-23:00",
+        "thursday": "10:00-23:00",
+        "friday": "10:00-23:00",
+        "saturday": "10:00-23:00",
+        "sunday": "10:00-21:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "Halloween at Grona Lund",
+      "description": "When the big clock strikes 6 pm and darkness descends on the park, Stora Omradet fills with phantoms, zombies, freaky clowns, and evil spirits. That's also when our 'skrackzon' (horror zone) activates. If you choose to visit this zone, which is clearly marked out, you'll come face to face with these evil beings. The new houses of horrors can be visited throughout the day... if you dare!",
+      "category": "entertainment",
+      "date": "DAY_4",
+      "start": "18:00",
+      "end": "22:00",
+      "ticket": true,
+      "ticketLink": "hhttp://bit.ly/2zeH4DM"
+    },
+    {
+      "venueId": 1,
+      "name": "Stadion",
+      "address": "Lidingovagen",
+      "neighbourhood": "Ostermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "Sabina Ddumba on tour",
+      "description": "In just a few years, Sabina Ddumba has secured her place as one of Sweden's most brilliant musical stars. This summer, festival visitors to Popaganda, Way Out West and the Bravalla Festival got to experience her on stage and now get even more chances. Until spring 2018 she is on a Swedish tour with 16 inaugural gigs around the country and in Stockholms Stadion. Tickets to the concerts are out for sale.",
+      "category": "music",
+      "date": "DAY_1",
+      "start": "19:30",
+      "end": "21:30",
+      "ticket": true,
+      "ticketLink": "http://bit.ly/2guhLK5"
+    },
+    {
+      "venueId": 1,
+      "name": "Stadion",
+      "address": "Lidingovagen",
+      "neighbourhood": "Ostermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "Changes; Thomas Di Leva",
+      "description": "The show 'Changes' is exclusively a tribute to David Bowie, where the audience gets to enjoy Bowie's greatest hits, interpreted and arranged by Thomas Di Leva accompanied by some of Sweden's best musicians on stage.",
+      "category": "music",
+      "date": "DAY_2",
+      "start": "21:00",
+      "end": "22:30",
+      "ticket": true,
+      "ticketLink": "http://bit.ly/2zxaP3E"
+    },
+    {
+      "venueId": 1,
+      "name": "Stadion",
+      "address": "Lidingovagen",
+      "neighbourhood": "Ostermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "Open House; The Olymic Games of 19122",
+      "description": "The Stockholm Stadium, often called the Olympic Stadium, was built for the 1912 Olympic Games and is still one of the world's oldest active Olympic venues. The stadium itself is a live sports and cultural history memorial with a nice atmosphere. To the stadium is now the permanent exhibition Stadion Stockholm 1912 which, with lots of pictures and objects, tells the story of the Stadium and the 'Sunshine Olympiadas' in 1912. During the Open House there is both guided tour of the stadium itself and in the part that houses the 1912 exhibition.",
+      "category": "knowledge",
+      "date": "DAY_3",
+      "start": "13:00",
+      "end": "17:00",
+      "ticket": false
+    },
+    {
+      "venueId": 1,
+      "name": "Stadion",
+      "address": "Lidingovagen",
+      "neighbourhood": "Ostermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "10:00-21:00",
+        "tuesday": "10:00-21:00",
+        "wednesday": "10:00-21:00",
+        "thursday": "10:00-21:00",
+        "friday": "10:00-19:00",
+        "saturday": "11:00-17:00",
+        "sunday": "11:00-17:00"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "BAUHAUS-Galan, IAAF Diamond League",
+      "description": "Men: 100 m, 800 m, 3000/5000 m, 400 m and spear. Women: 200 m, 400 m, 1500 m, 3000 m and discus.",
+      "category": "entertainment",
+      "date": "DAY_4",
+      "start": "19:00",
+      "end": "22:00",
+      "ticket": true,
+      "ticketLink": "http://bit.ly/2yS0fad"
+    },
+    {
+      "venueId": 3,
+      "name": "Stadshuset",
+      "address": "Hantverkargatan 1",
+      "neighbourhood": "Kungsholmen",
+      "isOpen": true,
+      "hours": {
+        "monday": "08:00-16:30",
+        "tuesday": "08:00-16:30",
+        "wednesday": "08:00-16:30",
+        "thursday": "08:00-16:30",
+        "friday": "08:00-16:30",
+        "saturday": "closed",
+        "sunday": "closed"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "Fireworks",
+      "description": "City Hall (Stadshuset) is located just on the edge of Lake Malaren on Kungsholmen. The setting is magical, with the fireworks brilliantly lighting up the skies and falling gently into the waters below. The crowds are warm and friendly but get there early as the crowds are also big.",
+      "category": "entertainment",
+      "date": "DAY_3",
+      "start": "19:00",
+      "end": "22:00",
+      "ticket": false
+    },
+    {
+      "venueId": 3,
+      "name": "Waterfront",
+      "address": "Nils Ericsons Plan 4",
+      "neighbourhood": "Norrmalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "08:00-16:30",
+        "tuesday": "08:00-16:30",
+        "wednesday": "08:00-16:30",
+        "thursday": "08:00-16:30",
+        "friday": "08:00-16:30",
+        "saturday": "closed",
+        "sunday": "closed"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "STHLM Tech Fest",
+      "description": "5,000 startup founders, investors, designers, developers, and journalists come together to share, be inspired and meet the whole Stockholm startup ecosystem, and welcome visitors from 20+ countries.",
+      "category": "knowledge",
+      "date": "DAY_4",
+      "start": "09:30",
+      "end": "19:30",
+      "ticket": true,
+      "ticketLink": "http://bit.ly/2i0A0Xq"
+    },
+    {
+      "venueId": 6,
+      "name": "Fotografiska",
+      "address": "Stadsgardshamnen 22",
+      "neighbourhood": "Sodermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "09:00-11:00",
+        "tuesday": "09:00-11:00",
+        "wednesday": "09:00-11:00",
+        "thursday": "09:00-01:00",
+        "friday": "09:00-01:00",
+        "saturday": "09:00-01:00",
+        "sunday": "09:00-11:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "Opening of The Autumn Salon",
+      "description": "The Autumn Salon at Fotografiska is the largest juried exhibition of Swedish photography. It is a tribute to Sweden’s photographers, established as well as amateurs, open to everyone who resides in Sweden. This is the fourth edition of Fotografiska’s Autumn Salon, which showcases Swedish photography as its best.",
+      "category": "knowledge",
+      "date": "DAY_3",
+      "start": "12:00",
+      "end": "13:30",
+      "ticket": true
+    },
+    {
+      "venueId": 6,
+      "name": "Fotografiska",
+      "address": "Stadsgardshamnen 22",
+      "neighbourhood": "Sodermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "09:00-11:00",
+        "tuesday": "09:00-11:00",
+        "wednesday": "09:00-11:00",
+        "thursday": "09:00-01:00",
+        "friday": "09:00-01:00",
+        "saturday": "09:00-01:00",
+        "sunday": "09:00-11:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "The Autumn Salon",
+      "description": "The Autumn Salon at Fotografiska is the largest juried exhibition of Swedish photography. It is a tribute to Sweden’s photographers, established as well as amateurs, open to everyone who resides in Sweden. This is the fourth edition of Fotografiska’s Autumn Salon, which showcases Swedish photography as its best.",
+      "category": "knowledge",
+      "date": "DAY_4",
+      "start": "09:00",
+      "end": "01:00",
+      "ticket": true
+    },
+    {
+      "venueId": 7,
+      "name": "Tradgarden",
+      "address": "Hammarby Slussvag 2",
+      "neighbourhood": "Sodermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "closed",
+        "tuesday": "closed",
+        "wednesday": "closed",
+        "thursday": "17:00-03:00",
+        "friday": "17:00-03:00",
+        "saturday": "17:00-03:00",
+        "sunday": "17:00-03:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "Sunset Cinema: Fonko",
+      "description": "A great, musical revolution is currently underway in Africa and affects millions of people. In Fonko we meet some of the outspoken, creative and interesting artists who redefine the image of Africa today.",
+      "category": "knowledge",
+      "date": "DAY_2",
+      "start": "17:00",
+      "end": "18:30",
+      "ticket": false
+    },
+    {
+      "venueId": 7,
+      "name": "Tradgarden",
+      "address": "Hammarby Slussvag 2",
+      "neighbourhood": "Sodermalm",
+      "isOpen": true,
+      "hours": {
+        "monday": "closed",
+        "tuesday": "closed",
+        "wednesday": "closed",
+        "thursday": "17:00-03:00",
+        "friday": "17:00-03:00",
+        "saturday": "17:00-03:00",
+        "sunday": "17:00-03:00"
+      },
+      "attributes": {
+        "restaurantInside": true,
+        "restaurantsCloseBy": false,
+        "venueParking": true
+      },
+      "title": "LIVE SESSIONS: DUNGEN",
+      "description": "It will be the fifth year in a row Dungen will come to our club. One of the world's absolute best live bands will end the lifetime!",
+      "category": "music",
+      "date": "DAY_3",
+      "start": "21:00",
+      "end": "23:30",
+      "ticket": false
+    },
+    {
+      "venueId": 4,
+      "name": "Gamla Stan",
+      "address": "Prastgatan 24",
+      "neighbourhood": "Gamla Stan",
+      "isOpen": true,
+      "hours": {
+        "monday": "00:00-23:59",
+        "tuesday": "00:00-23:59",
+        "wednesday": "00:00-23:59",
+        "thursday": "00:00-23:59",
+        "friday": "00:00-23:59",
+        "saturday": "00:00-23:59",
+        "sunday": "00:00-23:59"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "Run through Stockholm",
+      "description": "Join a local running group or book a guided tour and experience the best of Stockholm while running. Explore the historic Old Town, Djurgarden, Sodermalm, or the beautiful trails through the forest alongside a friendly local.",
+      "category": "sports",
+      "date": "DAY_3",
+      "start": "10:00",
+      "end": "11:30",
+      "ticket": true,
+      "ticketLink": "www.runwithmestockholm.com"
+    },
+    {
+      "venueId": 4,
+      "name": "Gamla Stan",
+      "address": "Malartorget 13",
+      "neighbourhood": "Gamla Stan",
+      "isOpen": true,
+      "hours": {
+        "monday": "00:00-23:59",
+        "tuesday": "00:00-23:59",
+        "wednesday": "00:00-23:59",
+        "thursday": "00:00-23:59",
+        "friday": "00:00-23:59",
+        "saturday": "00:00-23:59",
+        "sunday": "00:00-23:59"
+      },
+      "attributes": {
+        "restaurantInside": false,
+        "restaurantsCloseBy": true,
+        "venueParking": true
+      },
+      "title": "Free Tour",
+      "description": "Free guided tours in English that take you to the main sites of Stockholm. Tours last for about 1 hour and 30 minutes, and starts daily rain, shine or snow.",
+      "category": "knowledge",
+      "date": "DAY_4",
+      "start": "10:00",
+      "end": "11:00",
+      "ticket": false,
+      "ticketLink": "www.stockholmfreetour.com"
+    }
+  ]
+}
