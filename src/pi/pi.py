@@ -81,7 +81,7 @@ def formatText(text):
 
 def orderPrint(event):
 	# read system date
-	todayDate = dt.date.today() + dt.timedelta(day=selectedDay)
+	todayDate = dt.date.today() + dt.timedelta(days=selectedDay)
 	todayStr = date.strftime("%Y-%m-%d")
 	message = "P"
 	message += event["title"] + "\n"
