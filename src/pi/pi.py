@@ -29,6 +29,7 @@ events = []
 
 ser = serial.Serial("/dev/ttyACM0", 9600)
 
+
 def handleButton(message):
 	global buttonPresses
 	buttonPresses.pop(0)  # Remove oldest element.
@@ -79,9 +80,9 @@ def formatText(text):
 	return res
 
 def orderPrint(event):
-	# read system time
-	date = dt.date.today() + dt.timedelta(days=selectedDay)
-	dateStr = date.strftime('%Y-%m-%d')
+	# read system date
+	todayDate = dt.date.today() + dt.timedelta(day=selectedDay)
+	todayStr = date.strftime("%Y-%m-%d")
 	message = "P"
 	message += event["title"] + "\n"
 	# message += "Date: " + event["date"] + "\n"
@@ -184,8 +185,14 @@ def sendMessage(message):
 # 	req = requests.get('http://' + DOMAIN + ':8082/events')
 # 	return req.json()["events"]
 
+# def getEvents():
+# 	with open('../server/events.json') as json_data:
+# 		data = json.load(json_data)
+# 		eventsData = data["events"]
+# 		return eventsData
+
 def getEvents():
-	with open('~/interactive-map/src/server/events_exhibition.json') as json_data:
+	with open('../server/events_exhibition.json') as json_data:
 		data = json.load(json_data)
 		eventsData = data["events"]
 		return eventsData
