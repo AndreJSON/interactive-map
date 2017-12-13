@@ -86,7 +86,7 @@ def orderPrint(event):
 	message = "P"
 	message += event["title"] + "\n"
 	# message += "Date: " + event["date"] + "\n"
-	message += "Date: " + dateStr + "\n"
+	message += "Date: " + todayStr + "\n"
 	message += "Time: " + event["start"] + " - " + event["end"] + "\n"
 	message += "At: " + event["name"] + ", " + event["address"] + "\n\n"
 	message += event["description"] + "\n"
