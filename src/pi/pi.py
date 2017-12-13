@@ -3,15 +3,20 @@ import time
 import requests
 import re
 import json
+import datetime as dt
 
 # DOMAIN = '77.53.126.163'
 FAULTY_DATA = '\xFF'
 START_MESSAGE = '\x01'
 END_MESSAGE = '\x02'
-DAY_1 = '2017-11-01'
-DAY_2 = '2017-11-02'
-DAY_3 = '2017-11-03'
-DAY_4 = '2017-11-04'
+# DAY_1 = '2017-11-01'
+# DAY_2 = '2017-11-02'
+# DAY_3 = '2017-11-03'
+# DAY_4 = '2017-11-04'
+DAY_1 = 0
+DAY_2 = 1
+DAY_3 = 2
+DAY_4 = 3
 LINE_LIMIT = 32
 
 lastPrintTime = time.clock()
@@ -73,9 +78,13 @@ def formatText(text):
 	return res
 
 def orderPrint(event):
+	# read system date
+	todayDate = dt.date.today() + dt.timedelta(day=selectedDay)
+	todayStr = date.strftime("%Y-%m-%d")
 	message = "P"
 	message += event["title"] + "\n"
-	message += "Date: " + event["date"] + "\n"
+	# message += "Date: " + event["date"] + "\n"
+	message += "Date: " + dateStr + "\n"
 	message += "Time: " + event["start"] + " - " + event["end"] + "\n"
 	message += "At: " + event["name"] + ", " + event["address"] + "\n\n"
 	message += event["description"] + "\n"
@@ -174,8 +183,14 @@ def sendMessage(message):
 # 	req = requests.get('http://' + DOMAIN + ':8082/events')
 # 	return req.json()["events"]
 
+# def getEvents():
+# 	with open('../server/events.json') as json_data:
+# 		data = json.load(json_data)
+# 		eventsData = data["events"]
+# 		return eventsData
+
 def getEvents():
-	with open('../server/events.json') as json_data:
+	with open('../server/events_exhibition.json') as json_data:
 		data = json.load(json_data)
 		eventsData = data["events"]
 		return eventsData
