@@ -34,6 +34,7 @@ def handleButton(message):
 	global buttonPresses
 	buttonPresses.pop(0)  # Remove oldest element.
 	value = int(message)
+	print (value)
 	if 920 <= value <= 1024:
 		buttonPresses.append(1)
 	elif 800 <= value <= 900:
